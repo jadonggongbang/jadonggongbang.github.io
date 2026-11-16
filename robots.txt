@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /insta/
+Sitemap: https://jadonggongbang.github.io/sitemap.xml

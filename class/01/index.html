@@ -1,0 +1,133 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>1강 Claude가 뭐고, ChatGPT랑 뭐가 달라? | Claude 교실 · 자동공방</title><meta name="description" content="Claude와 ChatGPT, 뭐가 더 좋은지 대신 내 일로 직접 가려내는 법. 바로 복사해 쓰는 비교 문장 3개와 막히는 곳까지.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/01/">
+<meta property="og:type" content="article"><meta property="og:title" content="1강 Claude가 뭐고, ChatGPT랑 뭐가 달라? | Claude 교실 · 자동공방"><meta property="og:description" content="Claude와 ChatGPT, 뭐가 더 좋은지 대신 내 일로 직접 가려내는 법. 바로 복사해 쓰는 비교 문장 3개와 막히는 곳까지."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 1강 · 1부 · Claude 시작하기</div><h1>Claude가 뭐고, ChatGPT랑 뭐가 달라?</h1><p>Claude와 ChatGPT, 뭐가 더 좋은지 대신 내 일로 직접 가려내는 법. 바로 복사해 쓰는 비교 문장 3개와 막히는 곳까지.</p></div></header><article><div class="wrap"><p>이 질문, 대답하기가 좀 곤란해.<br>정답이 매달 바뀌거든. 지난달에 "이건 Claude가 낫다"고 적어 둔 게 이번 달 업데이트 한 번에 틀린 말이 돼. 그래서 이 글은 "누가 더 좋다"는 결론을 안 줘. 대신 <b>내 일을 넣어서 직접 가려내는 법</b>을 줄게. 그건 1년 뒤에도 써먹을 수 있으니까.</p>
+<h2>1. Claude가 뭐냐면</h2>
+<p>Claude는 Anthropic이라는 회사가 만든 AI야. 채팅창에 말로 부탁하면 글을 써 주고, 긴 글을 줄여 주고, 붙인 파일을 읽고 정리해 줘. ChatGPT를 한 번이라도 써 봤으면 화면을 보자마자 "아, 그거네" 할 거야.</p>
+<p>굳이 사람에 빗대자면, <b>말귀는 엄청 빠른데 우리 사정은 하나도 모르는 신입</b>에 가까워. 시키면 1분 만에 해 오는데, 모르는 건 그럴듯하게 채워 올 때가 있어. 그래서 Claude를 잘 쓰는 사람들은 두 가지를 습관처럼 해.</p>
+<ul><li>처음 부탁할 때 <b>사정을 같이 알려 줘.</b> ("팀장님께 보내는 거야", "표로 줘")</li><li>받은 걸 <b>그대로 내보내지 않고 한 번 훑어.</b> 특히 이름, 날짜, 숫자.</li></ul>
+<p>이 두 습관은 2강부터 계속 나와. 지금은 "빠른 신입" 이미지만 들고 가면 돼.</p>
+<h3>사람들이 실제로 맡기는 일</h3>
+<p>막연하면 안 와닿으니까, 회사·학교·생활로 나눠서 적어 볼게. 다 지금 무료로 해 볼 수 있는 것들이야.</p>
+<p><b>회사에서</b></p>
+<ul><li>회의 메모를 "할 일 | 담당 | 마감" 표로 바꾸기</li><li>거절해야 하는 메일을 덜 차갑게 다듬기</li><li>엑셀에서 복사한 거래처 목록에서 중복된 이름 찾기</li><li>30쪽짜리 보고서에서 "내가 결정해야 할 것"만 뽑기</li></ul>
+<p><b>학교·취준에서</b></p>
+<ul><li>조별 과제 단톡방 대화에서 누가 뭘 맡았는지 정리하기</li><li>강의 공지에서 제출물이랑 마감만 뽑기</li><li>자기소개서 첫 문장 다섯 가지 버전 받아 보기</li><li>면접 예상 질문 뽑고, 내 답이 어디가 약한지 물어보기</li></ul>
+<p><b>생활에서</b></p>
+<ul><li>자취방 계약서에서 어려운 조항을 쉬운 말로 풀기</li><li>한 달 카드 내역을 붙여서 식비·교통비·구독료로 나누기</li><li>친구 넷이 가는 1박 2일 여행 일정이랑 정산표 만들기</li></ul>
+<p>이 중에 "어, 이번 주에 나 이거 해야 하는데" 싶은 게 하나라도 있으면, 그게 오늘 숙제 재료야.</p>
+<h2>2. 그래서 ChatGPT랑 뭐가 다른데?</h2>
+<h3>같은 점부터</h3>
+<p>솔직히 같은 점이 더 많아.</p>
+<ul><li>입력창에 말로 쓰면 돼. 특별한 명령어 없어.</li><li>파일이나 사진을 붙여서 물어볼 수 있어.</li><li>둘 다 무료로 시작할 수 있고, 많이 쓰면 유료로 넘어가. (무료로 어디까지 되는지는 2강에서)</li><li>둘 다 가끔 틀려. 그것도 아주 자신 있게.</li></ul>
+<p>그러니까 ChatGPT에서 익힌 요령은 거의 그대로 가져와도 돼. 처음부터 다시 배울 필요 없어.</p>
+<h3>다른 점은 '손이 몇 번 가느냐'</h3>
+<p>둘을 같이 써 본 사람들이 차이를 말할 때는 기능 이름보다 이런 얘기를 더 많이 해.</p>
+<ul><li>"같은 부탁인데 한쪽은 길게 쓰고, 한쪽은 짧게 써."</li><li>"한쪽은 모르는 칸을 그럴듯하게 채우고, 한쪽은 비워 둬."</li><li>"말투가 한쪽이 더 내 말투에 가까워."</li></ul>
+<p>이런 차이는 <b>어떤 일이냐에 따라 뒤집혀.</b> 메일 다듬기는 A가 편한데 표 정리는 B가 편할 수 있어. 그리고 업데이트 한 번에 또 바뀌어. 그래서 남이 만든 비교표보다 <b>내 일 하나로 직접 붙여 보는 게</b> 제일 정확해.</p>
+<p>폰 고를 때를 생각해 봐. 스펙표를 아무리 봐도, 내가 매일 쓰는 앱이 버벅이는지는 손에 쥐어 봐야 알잖아. 이것도 같아.</p>
+<h2>3. 내가 돌려 봤을 때</h2>
+<p>지어낸 회의 메모를 Claude에 넣고 할 일 표를 만들어 달라고 해 봤어. 메모는 대충 이랬어. 회사 이름, 사람 이름은 다 가짜야.</p>
+<pre>11/13 프로모션 회의
+배너 시안 민지 11/20까지
+설문 문항 정리 김대리
+예산 확인 필요 (누가?)
+경품 커피 쿠폰 vs 할인 쿠폰 → 다음에</pre>
+<p>나온 표는 이랬어.</p>
+<div class="tbl"><table><thead><tr><th>할 일</th><th>담당</th><th>마감</th></tr></thead><tbody><tr><td>배너 시안</td><td>민지</td><td>11/20</td></tr><tr><td>설문 문항 정리</td><td>김대리</td><td>미정</td></tr><tr><td>예산 확인</td><td>미정</td><td>미정</td></tr></tbody></table></div>
+<p>제일 눈에 띈 건, <b>담당자가 안 적힌 일에 이름을 지어 넣지 않고 '미정'이라고 써 줬다</b>는 거야. 이게 은근히 고마웠어. 회의 메모는 원래 빈칸투성이잖아. 거기에 AI가 아무 이름이나 채워 넣으면, 그 표를 단톡방에 올린 순간 엉뚱한 사람이 일을 떠안게 돼.</p>
+<p>단, 이건 부탁 문장에 "없으면 지어내지 말고 '미정'이라고 써 줘"를 넣었을 때 얘기야. 그래서 아래 복사할 문장에도 그 줄을 꼭 넣어 뒀어.</p>
+<p>처음엔 유료 모델(Opus)로 돌렸어. 그래서 무료 요금제에서 쓰는 모델(Sonnet)로도 다시 돌려 봤는데, 담당이랑 마감이 없는 칸은 똑같이 '미정'으로 나왔어. 지어낸 이름은 없었고.</p>
+<blockquote>표는 유료 모델 결과, 무료 모델 재확인은 2026년 11월 15일. 매번 글자 하나까지 똑같이 나온다는 뜻은 아니야.</blockquote>
+<h2>4. 따라 해 보기</h2>
+<h3>1단계 · claude.ai에 들어가서 가입하기</h3>
+<ul><li>구글 계정으로 가입하면 1분이면 끝나.</li><li><b>이렇게 보이면 성공:</b> 화면 가운데에 인사말이 뜨고, 그 아래 입력창이 보여.</li><li>이 강의 1부는 무료로 다 따라 할 수 있어.</li></ul>
+<h3>2단계 · 이번 주에 진짜로 할 일 하나 고르기</h3>
+<ul><li>위 목록에서 골라도 되고, 지금 컴퓨터에 열려 있는 거면 더 좋아.</li><li>회사 이름, 사람 이름, 금액은 <b>바꿔서</b> 붙여. 김 부장 → A 부장, 1억 2천 → 1억처럼. (붙이면 안 되는 건 7강에서 따로 다룰게.)</li></ul>
+<h3>3단계 · 같은 문장을 Claude와 ChatGPT에 똑같이 넣기</h3>
+<ul><li>탭 두 개 열어서 나란히 놓고 해 봐.</li><li><b>이렇게 보이면 성공:</b> 두 답을 보면서 "이쪽이 덜 고쳐도 되네" 싶은 데가 한 군데라도 보여.</li></ul>
+<h2>5. 복사할 문장</h2>
+<p>일에 따라 골라 써. 셋 다 "지어내지 마" 줄이 들어가 있어. 이 줄이 비교의 핵심이야.</p>
+<p><b>회의 메모 → 할 일 표</b></p>
+<pre>아래 [회의 메모]에서 할 일만 뽑아 '할 일 | 담당 | 마감' 표로 만들어 줘.
+메모에 담당이나 마감이 없으면 지어내지 말고 '미정'이라고 써 줘.
+
+[회의 메모]
+(여기에 붙여 넣기)</pre>
+<p><b>공지 → 챙길 것</b></p>
+<pre>아래 [공지]에서 내가 챙겨야 할 것만 뽑아 줘.
+'챙길 것 | 언제까지 | 어디로 내는지' 표로.
+공지에 없는 건 추측하지 말고 '공지에 없음'이라고 써 줘.
+
+[공지]
+(여기에 붙여 넣기)</pre>
+<p><b>거절 메일 다듬기</b></p>
+<pre>아래 [초안]은 제안을 거절하는 메일이야.
+거절한다는 건 분명히 하되, 다음에 다시 연락할 여지는 남겨 줘.
+내 초안에 없는 약속(날짜, 할인 같은 것)은 새로 넣지 마.
+
+[초안]
+(여기에 붙여 넣기)</pre>
+<h3>두 답을 비교할 때 볼 곳 두 군데</h3>
+<ol><li><b>지어낸 게 있나?</b> 원문에 없는 이름, 날짜, 약속이 들어갔는지.</li><li><b>손이 몇 번 가나?</b> 바로 붙여도 되는지, 몇 군데를 고쳐야 하는지. 고친 횟수를 세어 보면 꽤 차이가 나.</li></ol>
+<h2>6. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"답이 너무 길어."</b><br>모양을 안 정해 줘서 그래. 모양을 말 안 하면 친절하게 길게 쓰는 쪽으로 가. '표로', '3줄로', '단톡방에 올릴 길이로'처럼 모양을 붙이면 확 짧아져. (5강에서 자세히)</p>
+<p><b>"어제랑 답이 달라."</b><br>고장 아니야. 같은 문장이어도 매번 조금씩 다르게 나와. 주사위를 매번 다시 굴리는 거랑 비슷해. 중요한 일이면 두 번 돌려 보고, <b>두 번 다 똑같이 나온 부분만</b> 믿어.</p>
+<p><b>"영어로 대답해."</b><br>한국어로 물으면 보통 한국어로 답해. 붙인 자료가 영어면 영어로 답할 때가 있어. 문장 끝에 "한국어로 답해 줘"를 붙이면 돼.</p>
+<p><b>"하다가 멈췄어."</b><br>무료 요금제는 정해진 사용량을 다 쓰면 한동안 기다려야 해. 긴 파일을 여러 번 붙이면 빨리 차. (2강에서 자세히)</p>
+<p><b>"둘 다 별로인데?"</b><br>그럴 수 있어. 대개는 사정을 덜 알려 줘서야. "누구한테 보내는 건지", "어디에 쓸 건지" 한 줄씩만 더 붙이고 다시 해 봐. 그래도 별로면 그 일은 아직 AI한테 안 맞는 일일 수도 있어. 그것도 알아 둘 만한 결과야.</p>
+<h2>7. 숙제 하나</h2>
+<p>이번 주 진짜 일 하나를 골라서, 위 문장으로 Claude와 ChatGPT에 둘 다 넣어 봐. 그리고 메모장에 딱 한 줄만 적어 둬.</p>
+<blockquote>○○ 일은 ______ 쪽이 덜 고쳤다.</blockquote>
+<p>이 한 줄이 쌓이면 나만의 "이 일은 여기" 목록이 돼. 남이 만든 비교표보다 그게 훨씬 정확해.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>질문</th><th>답</th></tr></thead><tbody><tr><td>Claude는?</td><td>Anthropic이 만든 AI. 말귀 빠른 신입이라고 생각하면 돼. 단, 내 사정은 모름</td></tr><tr><td>ChatGPT랑?</td><td>사용법은 거의 같아. 요령은 그대로 가져와도 돼</td></tr><tr><td>다른 점은?</td><td>기능표보다 '손이 몇 번 가느냐'. 일마다, 업데이트마다 바뀜</td></tr><tr><td>가려내는 법</td><td>같은 문장을 둘에 넣고 ① 지어낸 거 ② 고친 횟수만 봐</td></tr><tr><td>꼭 넣을 한 줄</td><td>"없으면 지어내지 말고 '미정'이라고 써 줘"</td></tr><tr><td>숙제</td><td>"○○ 일은 ___ 쪽이 덜 고쳤다" 한 줄 적기</td></tr></tbody></table></div></div><p class="meta">내용 확인: 2026년 11월 16일 · Claude 화면과 요금제는 자주 바뀌어. 다르면 인스타 DM으로 알려 줘.</p><div class="nav"><span>← 처음</span><span class="r">2강 · 곧 올라와</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
