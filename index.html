@@ -1,0 +1,242 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<title>자동공방 공방장이 | 비개발자 직장인을 위한 Claude 업무 자동화</title>
+<meta name="description" content="개발자 아닌 직장인이 Claude로 반복 업무를 자동화하는 방법. 업무 자동화 설계, 비개발자 Claude 강의·워크숍, 매일 쓰는 프롬프트 모음.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="자동공방 공방장이 | 비개발자 직장인을 위한 Claude 업무 자동화">
+<meta property="og:description" content="개발자 아닌 직장인이 Claude로 반복 업무를 자동화하는 방법. 업무 자동화 설계, 비개발자 Claude 강의·워크숍, 매일 쓰는 프롬프트 모음.">
+<meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png">
+<meta property="og:locale" content="ko_KR">
+<!-- canonical: GitHub Pages 주소가 정해지면 넣기 -->
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>
+/* Layout: black masthead like a card-news cover, then cream sections; services as three equal blocks; one pink mark per section. Single committed brand look, no theme switch. */
+:root{
+  --ink:#141414; --cream:#F5F1EA; --paper:#FBF8F3; --pink:#FF4FA0; --muted:#6B645C; --line:#E4DDD2; --soft:#2a2a2a;
+  --display:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --body:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  color-scheme:light;
+}
+body{background:var(--cream);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.75;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.top{background:var(--ink);color:var(--cream)}
+.top .wrap{padding-block:56px 64px;display:grid;gap:26px}
+.mark{display:flex;align-items:center;gap:14px}
+.logo{position:relative;flex:none;width:64px;height:64px;border-radius:50%;background:var(--ink);border:2px solid #2c2c2c;color:var(--cream);font-family:var(--display);font-weight:900;font-size:17px;line-height:1.02;letter-spacing:-1px;display:flex;align-items:center;justify-content:center;text-align:center}
+.logo i{position:absolute;top:9px;right:10px;width:9px;height:9px;border-radius:50%;background:var(--pink)}
+.mark span{font-weight:700;font-size:15px;opacity:.8}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(32px,7.4vw,54px);line-height:1.24;letter-spacing:-.03em;text-wrap:balance}
+h1 em{font-style:normal;color:var(--pink)}
+.lead{font-size:18px;line-height:1.8;max-width:34em;opacity:.92;display:grid;gap:12px}
+.cta{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;font-weight:700;font-size:16px;text-decoration:none}
+.btn.p{background:var(--pink);color:var(--ink)}
+.btn.s{border:2px solid #3a3a3a;color:var(--cream)}
+.btn:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+main .wrap{padding-block:12px 72px}
+section{padding-block:46px;border-bottom:1px solid var(--line);display:grid;gap:18px}
+section:last-child{border-bottom:0}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:var(--muted)}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(24px,5vw,31px);line-height:1.36;letter-spacing:-.02em;text-wrap:balance}
+p{max-width:36em}
+.hl{background:linear-gradient(transparent 62%,rgba(255,79,160,.3) 62%)}
+.svc{display:grid;grid-template-columns:1fr;gap:12px}
+.svc article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:8px;align-content:start}
+.svc h3{font-weight:900;font-size:19px;line-height:1.4}
+.svc p{font-size:15.5px;line-height:1.7;color:#3b3631}
+.svc .who{font-size:13px;font-weight:700;color:var(--muted)}
+ol.steps{list-style:none;padding:0;display:grid;gap:14px;counter-reset:s}
+ol.steps li{display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start;counter-increment:s}
+ol.steps li::before{content:counter(s);width:34px;height:34px;border-radius:50%;background:var(--ink);color:var(--cream);font-weight:900;font-size:16px;display:flex;align-items:center;justify-content:center;margin-top:2px}
+ol.steps b{display:block;font-size:17px}
+ol.steps span{font-size:15.5px;color:#3b3631}
+ul.plain{list-style:none;padding:0;display:grid;gap:10px}
+ul.plain li{display:grid;grid-template-columns:22px 1fr;gap:10px}
+ul.plain li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--pink);margin-top:.75em;margin-left:4px}
+.cases{display:grid;grid-template-columns:1fr;gap:12px}
+.cases article{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;gap:10px}
+.cases h3{font-weight:900;font-size:19px;line-height:1.4}
+.cases .ba{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:15.5px;line-height:1.65;color:#3b3631}
+.cases .ba b{font-weight:900;color:var(--muted)}
+.cases .ba b.af{color:var(--pink)}
+.cases h3.sub{font-size:16px;font-weight:900;color:var(--muted);margin-top:14px}
+.cases .tool{font-size:13px;font-weight:700;color:var(--muted)}
+.proof{font-size:15px;line-height:1.7;color:#cfc8bd}
+.proof a{color:var(--pink);text-decoration:underline;text-underline-offset:3px}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.gal img{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block}
+@media (max-width:520px){.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.gal img:last-child{display:none}}
+.pilot{display:grid;grid-template-columns:1fr;gap:10px}
+.pilot div{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--pink);border-radius:12px;padding:16px 18px;font-size:15.5px;line-height:1.7}
+.pilot b{display:block;font-size:16px;font-weight:900;margin-bottom:4px}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:10px}
+.rules div{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15.5px}
+.rules b{display:block;font-size:16px}
+.ask{background:var(--ink);color:var(--cream);border-radius:18px;padding:28px 24px;display:grid;gap:14px}
+.ask h2{color:var(--cream)}
+.ask p{opacity:.9}
+.ask .btn{justify-self:start}
+footer{background:var(--ink);color:#bdb6ab;font-size:14px}
+footer .wrap{padding-block:28px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+</style>
+
+</head><body>
+<header class="top">
+  <div class="wrap">
+    <div class="mark"><div class="logo" aria-hidden="true">자동<br>공방<i></i></div><span>자동공방 · 공방장이</span></div>
+    <h1>개발 몰라도 됩니다.<br>반복 업무, <em>제가 덜어 드릴게요.</em></h1>
+    <div class="lead">
+      <p>자동공방 공방장이예요.<br>제 업무 대부분은 이제 AI가 먼저 해 둬요.<br>폰에 할 일을 적으면 컴퓨터의 AI 비서가 처리하고,<br>아침 보고는 출근 전에 와 있어요.</p>
+      <p>저도 개발자 아니에요. 코드는 한 줄도 못 짜요.<br>그래서 처음에 어디서 막히는지 꽤 잘 알아요.<br>요즘은 그 방법을 다른 직장인들과<br>같이 만들고 있어요.</p>
+    </div>
+    <p class="proof">유튜브 30만 채널을 키워 본 콘텐츠 기획자예요.<br>지금 매일 돌아가는 자동화 7개를 <a href="#cases">아래에 다 적어 뒀어요.</a></p>
+    <div class="cta">
+      <a class="btn p" href="#pilot">12월 무료 파일럿 신청</a>
+      <a class="btn s" href="https://www.instagram.com/jadonggongbang/" target="_blank" rel="noopener">인스타그램 @jadonggongbang</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section>
+      <div class="eyebrow">하는 일</div>
+      <h2>반복 업무가 혼자 돌아가게 만들어 드려요</h2>
+      <div class="svc">
+        <article>
+          <div class="who">개인 · 팀</div>
+          <h3>업무 자동화 설계</h3>
+          <p>보고서, 모니터링, 문의 정리처럼<br>매주 돌아오는 일 중에 뭘 넘길지 같이 골라요.<br>고른 일은 정해진 시간에 혼자 돌게 만들어요.</p>
+        </article>
+        <article>
+          <div class="who">회사 · 모임</div>
+          <h3>강의 · 워크숍</h3>
+          <p>비개발자 직장인을 위한 Claude 수업이에요.<br>화면을 같이 보면서 만들고,<br>끝날 땐 각자 자기 업무 하나를 가져가요.</p>
+        </article>
+        <article>
+          <div class="who">누구나</div>
+          <h3>콘텐츠 · 모음 PDF</h3>
+          <p>인스타그램에 매일 하나씩 올려요.<br>일요일엔 그 주 내용을 PDF로 묶어 무료로 보내 드려요.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="cases">
+      <div class="eyebrow">이 정도까지 만들어요</div>
+      <h2>지금 매일 돌아가고 있는 것들</h2>
+      <p>여기 있는 코드는 한 줄도 제가 짠 게 없어요.<br>원하는 걸 말하고, 나온 걸 확인했을 뿐이에요.</p>
+      <div class="cases">
+        <article>
+          <h3>폰에 적으면 컴퓨터가 알아서 처리하는 할 일판</h3>
+          <div class="ba"><b>전</b><span>밖에서 떠오른 일은 메모해 뒀다가 집에 와서 다시 처리했어요.</span><b class="af">후</b><span>폰으로 할 일판에 적어 두면, 컴퓨터의 AI 비서가 20분마다 확인해서 처리해요.<br>끝나면 폰으로 알림이 와요.</span></div>
+          <div class="tool">Claude Code · 웹 할 일판 · 예약 실행</div>
+        </article>
+        <article>
+          <h3>주제 조사부터 영상까지 이어지는 콘텐츠 제작 라인</h3>
+          <div class="ba"><b>전</b><span>주제 고르고, 글 쓰고, 디자인하고, 영상 만드는 걸 따로따로 했어요.</span><b class="af">후</b><span>주제만 정하면 카드 이미지부터 릴스 영상까지 한 번에 나와요.<br>저는 주제를 고르고 결과를 확인해요.</span></div>
+          <div class="tool">Claude Code · 디자인 템플릿 · 영상 자동 생성</div>
+        </article>
+        <article>
+          <h3>평소보다 크게 터진 게시물만 골라 보는 트렌드 조사</h3>
+          <div class="ba"><b>전</b><span>인기 게시물을 하나하나 눌러 보며 감으로 주제를 정했어요.</span><b class="af">후</b><span>비슷한 계정에서 평소 조회수보다 크게 터진 게시물만 모아서,<br>다음 주 주제를 근거와 함께 골라요.</span></div>
+          <div class="tool">vidIQ 연결 · Claude</div>
+        </article>
+        <article>
+          <h3>AI 여러 개가 나눠 조사하고 서로 검증하는 보고서</h3>
+          <div class="ba"><b>전</b><span>AI 하나에게 물으면 그럴듯하지만 틀린 내용이 섞여 나왔어요.</span><b class="af">후</b><span>조사하는 AI와 반박하는 AI를 따로 둬요.<br>서로 검증하고 남은 내용만 출처와 함께 받죠.</span></div>
+          <div class="tool">Claude Code · 멀티 에이전트</div>
+        </article>
+        <h3 class="sub">본업에서도 매일 돌아가요 <span style="font-weight:500;font-size:13px">(회사 사정상 주제는 바꿔 적었어요)</span></h3>
+        <article>
+          <h3>출근 전에 끝나 있는 평판 AI 모니터링</h3>
+          <div class="ba"><b>전</b><span>우리 이름이 들어간 기사와 영상, 댓글을<br>사람이 매일 찾아봐야 했어요.</span><b class="af">후</b><span>평일 아침마다 AI가 뉴스와 유튜브를 훑고,<br>챙겨 볼 만한 것만 골라 보고를 올려 둬요.<br>출근해서 그 보고부터 읽어요.</span></div>
+          <div class="tool">Claude 예약 작업 · Notion</div>
+        </article>
+        <article>
+          <h3>AI 에이전트가 챙기는 평판 관리 기록</h3>
+          <div class="ba"><b>전</b><span>조치가 필요한 게시물을 표에 하나씩 옮기고,<br>처리됐는지 다시 들어가 확인했어요.</span><b class="af">후</b><span>매일 오전 에이전트가 새 건을 기록하고, 처리 결과도 업데이트해요.<br>확인이 필요한 건은 따로 표시돼요.</span></div>
+          <div class="tool">Claude 예약 작업 · Notion</div>
+        </article>
+        <article>
+          <h3>한 주치 평판 모니터링을 묶는 주간 보고</h3>
+          <div class="ba"><b>전</b><span>금요일마다 한 주치 자료를 다시 뒤져서 요약했어요.</span><b class="af">후</b><span>금요일 오후, 그 주 아침 보고를 모아 주간 소식 초안이 나와요.<br>컴퓨터가 꺼져 있어도 돌아가요.</span></div>
+          <div class="tool">Claude 예약 작업 · Notion</div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">실제 결과물</div>
+      <h2>콘텐츠 제작 라인에서 나온 카드</h2>
+      <p>주제만 정하면 문구부터 영상까지 이 라인으로 나와요.<br>카드 속 이름과 회의는 지어낸 예시예요.</p>
+      <div class="gal">
+        <img src="img/c1.png" alt="카드뉴스 표지: 회의 메모, Claude한테 이 말만 같이 보내세요">
+        <img src="img/c2.png" alt="카드뉴스 본문: 할 일 표를 만드는 문장과 결과">
+        <img src="img/c3.png" alt="카드뉴스 본문: AI 티 나는 표현을 고치는 문장과 전후 예시">
+      </div>
+    </section>
+
+    <section>
+      <div class="eyebrow">같이 일하는 순서</div>
+      <h2>상담을 신청하면 이렇게 진행돼요</h2>
+      <ol class="steps">
+        <li><div><b>일주일치 업무부터 같이 적어요</b><span>적어 보면 매번 똑같이 하는 일이 꼭 몇 개 나와요.</span></div></li>
+        <li><div><b>AI에 맡길 일을 같이 골라요</b><span>초안이나 정리처럼 AI에게 넘길 일과<br>직접 판단해야 할 일 사이에 선을 같이 그어요.<br>이 선을 먼저 정해야 나중에 안 꼬여요.</span></div></li>
+        <li><div><b>실제로 돌아가게 만들어요</b><span>쓰던 메일이나 노션에 AI를 연결하고,<br>정해진 시간에 혼자 돌게 설정해요.<br>사람은 나온 결과를 확인해요.</span></div></li>
+        <li><div><b>한 달 뒤에 다시 봐요</b><span>정말 시간이 줄었는지 재 보고, 안 쓰게 된 건 빼요.</span></div></li>
+      </ol>
+    </section>
+
+    <section>
+      <div class="eyebrow">해 온 일</div>
+      <h2>복잡한 걸 쉽게 풀어 전하는 일을 오래 했어요</h2>
+      <ul class="plain">
+        <li><span>유튜브 채널을 구독자 30만 명까지 키워 봤어요.</span></li>
+        <li><span>SNS 채널도 여러 개 직접 굴려 봤고요.</span></li>
+        <li><span>콘텐츠 기획과 제작은 제일 오래 해 온 일이에요.</span></li>
+        <li><span>기록용 워크북도 직접 기획해서 만들었죠.</span></li>
+        <li><span>지금은 제 업무부터 AI로 자동화하고 있어요.<br>주변 동료들의 반복 업무도 같이 줄이는 중이에요.</span></li>
+      </ul>
+    </section>
+
+
+    <section>
+      <div class="eyebrow">일하는 기준</div>
+      <h2>자동화할 때 꼭 지키는 네 가지</h2>
+      <div class="rules">
+        <div><b>직접 돌려 본 것만</b>안 해 본 기능은 제안하지 않아요.</div>
+        <div><b>민감한 자료는 빼고 설계</b>고객 정보나 내부 문서는 AI에 넣지 않는 쪽으로 먼저 설계해요.</div>
+        <div><b>자동 발송은 맨 나중에</b>처음엔 초안까지만 만들고, 사람이 확인한 뒤에 보내요.<br>믿을 만해지면 그때 자동으로 바꿔요.</div>
+        <div><b>숫자는 잰 것만</b>줄어든 시간은 직접 재서 보여 드려요.<br>재 보지 않은 숫자는 말하지 않아요.</div>
+      </div>
+    </section>
+
+    <section id="pilot">
+      <div class="eyebrow">12월 파일럿</div>
+      <h2>12월엔 두 분만, 무료로 같이 만들어요</h2>
+      <p>업무 하나를 골라 실제로 돌아가게 만들고, 줄어든 시간을 같이 재요.<br>신청은 <b>11월 30일</b>까지 받아요.</p>
+      <div class="pilot">
+        <div><b>같이 하는 것</b>매주 반복하는 일 하나를 골라 실제로 돌아가게 만들어요.<br>만든 뒤 한 달 동안 같이 지켜봐요.</div>
+        <div><b>부탁드리는 것</b>시작 전과 후에 걸리는 시간을 같이 재 주세요.<br>끝나면 솔직한 후기를 부탁드려요.<br>회사 이름은 빼고 사례로 소개해도 될지는 따로 여쭤볼게요.</div>
+        <div><b>신청하는 법</b>인스타그램 DM에 '파일럿'이라고 보내 주세요.<br>반복하는 일과 매주 쓰는 시간을 같이 적어 주시면 좋아요.<br>11월 30일까지 받고, 줄어드는 시간이 분명한 일부터 골라 개별로 연락드려요.</div>
+      </div>
+    </section>
+
+    <section id="ask">
+      <div class="ask">
+        <div class="eyebrow" style="color:#cfc8bd">문의</div>
+        <h2>우리 팀 반복 업무, 같이 줄여 볼까요?</h2>
+        <p>강의나 업무 자동화 상담은 인스타그램 DM으로 받아요.<br>매주 반복하는 일 하나와, 거기에 쓰는 시간을 적어 주세요.<br>예: "주간 보고 정리, 매주 2시간"<br>어떻게 줄일 수 있을지 먼저 답장드릴게요.</p>
+        <a class="btn p" href="https://ig.me/m/jadonggongbang" target="_blank" rel="noopener">DM 보내기</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap"><span>자동공방 · 공방장이</span><span>Instagram @jadonggongbang</span></div>
+</footer>
+
+</body></html>
