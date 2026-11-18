@@ -1,0 +1,103 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>3강 화면 한 바퀴: 채팅·프로젝트·아티팩트·설정 | Claude 교실 · 자동공방</title><meta name="description" content="Claude 화면에서 처음에 알아 둘 곳들. 채팅, 시크릿 채팅, 프로젝트, 아티팩트, 설정이 각각 무슨 일을 하는 곳인지 짚어 드려요.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/03/">
+<meta property="og:type" content="article"><meta property="og:title" content="3강 화면 한 바퀴: 채팅·프로젝트·아티팩트·설정 | Claude 교실 · 자동공방"><meta property="og:description" content="Claude 화면에서 처음에 알아 둘 곳들. 채팅, 시크릿 채팅, 프로젝트, 아티팩트, 설정이 각각 무슨 일을 하는 곳인지 짚어 드려요."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 3강 · 1부 · Claude 시작하기</div><h1>화면 한 바퀴: 채팅·프로젝트·아티팩트·설정</h1><p>Claude 화면에서 처음에 알아 둘 곳들. 채팅, 시크릿 채팅, 프로젝트, 아티팩트, 설정이 각각 무슨 일을 하는 곳인지 짚어 드려요.</p></div></header><article><div class="wrap"><p>월요일마다 "저는 마케팅팀이고, 보고는 다섯 줄로…"를 또 붙이고 있다면, 그 수고를 덜어 주는 메뉴가 왼쪽에 이미 있어요. 있는 줄 몰랐을 뿐이에요.<br>오늘은 그런 곳 몇 군데만 같이 걸어 볼게요. 외우지 않으셔도 돼요. <b>'이런 게 있었지'</b> 정도만 남으면, 필요한 날 이 글로 돌아오시면 돼요.</p>
+<p>Claude 화면은 업데이트가 잦아서 버튼 위치나 이름이 자주 바뀌어요. 화면 언어를 한국어로 해 두면 메뉴 이름도 한국어로 보여요. 아래 영어 이름은 공식 도움말 표기예요. 화면이 다르면 비슷한 이름을 찾으시면 돼요. 버튼이 안 보여서 헤매는 시간이 그만큼 줄어요.</p>
+<h2>1. 채팅: 그냥 대화하는 곳</h2>
+<p>가운데 입력창이 전부예요. 여기에 쓰면 대화가 시작되고, 지난 대화는 왼쪽 목록에 쌓여요.</p>
+<ul><li><b>입력창 옆 + 버튼:</b> 파일이나 사진을 붙여요. 엑셀, PDF, 스크린숏 다 돼요. 화면을 말로 설명하는 대신 스크린숏 한 장이면 돼요.</li><li><b>대화 하나 = 일 하나:</b> 회의 메모를 정리하던 채팅에서 갑자기 자소서를 물으면 앞 내용이 섞여요. 일이 바뀌면 새 채팅을 여세요. (11강에서 더)</li></ul>
+<h3>이럴 때 써요</h3>
+<p>메일 하나 다듬기, 면접 예상 질문 뽑기, 여행 짐 목록처럼 한 번 하고 끝나는 일이요. 이런 일은 채팅으로 충분하고, 다른 메뉴를 열 필요가 없어요.</p>
+<h2>2. 시크릿 채팅: 기록을 안 남기고 싶을 때</h2>
+<p>공식 도움말 기준으로 이렇게 써요.</p>
+<ul><li>새 채팅 화면 <b>오른쪽 위 유령 모양 아이콘</b>을 누르면 시크릿 채팅이 돼요.</li><li>켜지면 화면 테두리가 검게 바뀌고 왼쪽 위에 "Incognito chat"이라고 떠요.</li><li>이 대화는 <b>채팅 목록에도, Claude의 기억에도 안 남아요.</b> 다음 대화에 이 이야기가 끌려 들어오지 않아요.</li><li>대신 닫으면 다시 못 열어요. 프로젝트 안에서는 쓸 수 없고요.</li></ul>
+<h3>이럴 때 써요</h3>
+<ul><li>친구 고민 상담 내용 정리처럼, 남겨 두기 애매한 이야기</li><li>'기억 없는 상태'에서 답이 어떻게 나오는지 시험해 볼 때</li></ul>
+<p>다만 공식 도움말에는 시크릿 채팅도 기본 30일은 보관된다고 적혀 있어요. 목록에 안 보일 뿐, 바로 지워지지는 않아요. 그러니 시크릿이어도 주민번호나 계좌처럼 정말 민감한 정보는 넣지 마세요.</p>
+<h2>3. 프로젝트: 같은 설명은 한 번만</h2>
+<p>매번 "저는 마케팅팀 신입이고, 우리 회사는 이런 곳이고…"를 붙이고 계시다면 프로젝트를 쓸 때예요.</p>
+<p>프로젝트는 <b>자료와 지침을 넣어 둔 방</b>이에요.</p>
+<ul><li><b>지식(knowledge):</b> 파일이나 글을 올려 두면, 그 프로젝트 안의 모든 채팅이 그걸 참고해요.</li><li><b>지침(instructions):</b> "답은 항상 존댓말로", "표로 줘" 같은 규칙을 한 번 적어 두면 계속 지켜요.</li><li>무료는 <b>프로젝트 5개까지</b>예요. (공식 도움말 기준)</li></ul>
+<h3>예시로 보면</h3>
+<div class="tbl"><table><thead><tr><th>프로젝트 이름</th><th>넣어 둘 자료</th><th>지침 한 줄</th></tr></thead><tbody><tr><td>주간 보고</td><td>지난 보고 두세 개</td><td>"이 모양 그대로, 5줄 넘지 마"</td></tr><tr><td>졸업 프로젝트</td><td>과제 안내문, 조원 역할표</td><td>"마감 기준으로 할 일을 거꾸로 잡아 줘"</td></tr><tr><td>이사 준비</td><td>계약서, 체크리스트</td><td>"날짜 있는 건 날짜순으로"</td></tr></tbody></table></div>
+<p>지침 쓰는 법은 9강에서 제대로 다룰게요. 오늘은 '자주 하는 일은 방을 하나 만들면 되는구나'만 가져가세요.</p>
+<h2>4. 아티팩트: 결과물이 옆 창에 뜨는 것</h2>
+<p>긴 문서나 표, 작은 도구를 부탁하면 대화 오른쪽에 결과물이 따로 뜰 때가 있어요. 그게 아티팩트예요.</p>
+<p>공식 도움말 기준으로는 이래요.</p>
+<ul><li>보통 <b>15줄이 넘고 그것만으로 완성된 결과물</b>일 때 아티팩트로 만들어요.</li><li>무료에서도 돼요.</li><li>왼쪽 메뉴 <b>Artifacts</b> 칸에서 지금까지 만든 걸 모아 볼 수 있어요. 지난주에 만든 체크리스트를 찾느라 채팅을 뒤질 필요가 없어요.</li><li>처음 만든 건 <b>나만 봐요.</b> 공유는 따로 해야 해요.</li><li>결과물에 오류가 나면 근처에 <b>"Try fixing with Claude"</b> 버튼이 떠요. 누르면 고쳐 달라고 할 수 있어요.</li></ul>
+<h3>이럴 때 아티팩트가 편해요</h3>
+<ul><li>자기소개서처럼 여러 번 고쳐 가며 다듬는 문서. 고친 판이 한 창에 쌓여서 어느 판이 최신인지 헷갈리지 않아요.</li><li>"버튼 누르면 점심 메뉴를 골라 주는 거 만들어 줘" 같은 작은 도구</li></ul>
+<h3>안 뜰 때</h3>
+<p>설정에서 파일 만들기 기능이 꺼져 있으면 아티팩트가 안 만들어져요. 공식 도움말은 <b>Settings &gt; Capabilities</b>의 "Cloud code execution and file creation"(새 화면에서는 "Create and edit files")을 켜라고 안내해요.</p>
+<h2>5. 설정: 처음에 한 번만 열어 볼 곳</h2>
+<p>설정은 내 이름이나 프로필 메뉴 안에 있어요(위치는 화면 버전마다 조금 달라요). 처음엔 아래만 한 번 열어 보면 돼요. 한도에 걸리거나 기능이 안 될 때 어디부터 볼지 알게 돼요.</p>
+<p><b>사용량 (Usage)</b><br>5시간 한도와 주간 한도가 막대로 보여요. 2강에서 본 그 막대예요.</p>
+<p><b>기능 (Capabilities)</b><br>아티팩트·파일 만들기 같은 기능을 켜고 끄는 곳이에요. 아티팩트가 안 뜨면 여기부터 보세요.</p>
+<p><b>기억 (Your Claude / Memory)</b><br>Claude가 지난 대화에서 나에 대해 기억하는 걸 관리해요. 공식 도움말 기준으로 기억 만들기를 켜고 끄거나, 잠시 멈추거나(Pause), 초기화(Reset)할 수 있어요. 내가 말한 적 없는 걸 Claude가 안다 싶으면 여기를 보시면 돼요. 무엇이 남고 무엇이 안 남는지는 10강에서 자세히 볼게요.</p>
+<p>하나 더. 지난 채팅을 Claude에게 "그때 그 대화 찾아 줘"라고 시키는 기능은 공식 도움말 기준 <b>유료 요금제만</b> 돼요. 무료면 왼쪽 목록에서 직접 찾으셔야 해요.</p>
+<h2>6. 따라 해 보기 (5분)</h2>
+<ol><li>새 채팅을 열고 오른쪽 위 유령 아이콘을 눌러요. 테두리가 검게 바뀌면 성공이에요. x로 닫아요.</li><li>왼쪽에서 프로젝트를 하나 만들어요. 이름은 "연습"이면 돼요.</li><li>그 프로젝트 지침 칸에 이렇게 적어요.</li></ol>
+<pre>답은 항상 세 줄 안으로 해 줘. 마지막 줄은 내가 할 일 하나로 끝내.</pre>
+<ol><li>그 프로젝트 안에서 아무거나 물어보세요. 예를 들어 "이번 주에 운동 시작하려면 뭐부터 해?"</li><li><b>이렇게 보이면 성공:</b> 답이 세 줄이고, 마지막 줄이 할 일 하나예요.</li></ol>
+<p>이 5분이 지나면, 다음부터 같은 설명을 다시 붙이지 않아도 되는 방이 하나 생겨요.</p>
+<h2>7. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"유령 아이콘이 안 보여요."</b><br>프로젝트 안에서 새 채팅을 여셨을 수 있어요. 시크릿 채팅은 프로젝트 밖에서만 돼요.</p>
+<p><b>"아티팩트가 안 떠요."</b><br>결과가 짧으면 그냥 대화창에 써 줘요. 아니면 설정의 파일 만들기 기능이 꺼져 있을 수 있어요. 꼭 받고 싶으면 "별도 문서로 만들어 줘"를 붙이세요.</p>
+<p><b>"프로젝트 지침을 안 지켜요."</b><br>지침이 길고 여러 개면 몇 개를 놓칠 때가 있어요. 제일 중요한 것 하나만 남기고 다시 해 보세요. 지침 쓰는 요령은 9강에서 다뤄요.</p>
+<p><b>"메뉴 이름이 글이랑 달라요."</b><br>업데이트가 잦아서 그래요. 비슷한 이름을 찾거나, Claude에게 "설정에서 기억 끄는 곳이 어디야?"라고 직접 물어보셔도 돼요.</p>
+<h2>8. 숙제 하나</h2>
+<p>이번 주에 <b>같은 설명을 두 번 넘게 붙인 일</b>이 있었는지 떠올려 보세요. 있다면 그게 첫 프로젝트 후보예요. 이름만 적어 두세요.</p>
+<blockquote>첫 프로젝트: ______</blockquote>
+<p>9강에서 이 이름으로 방을 실제로 만들어요.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>곳</th><th>무슨 일을 하는 곳</th><th>언제</th></tr></thead><tbody><tr><td>채팅</td><td>대화 하나 = 일 하나</td><td>한 번 하고 끝나는 일</td></tr><tr><td>시크릿 채팅</td><td>목록·기억에 안 남아요 (30일 보관은 돼요)</td><td>남기기 애매한 이야기, 시험해 볼 때</td></tr><tr><td>프로젝트</td><td>자료 + 지침을 넣어 둔 방. 무료 5개</td><td>같은 설명을 두 번 넘게 할 때</td></tr><tr><td>아티팩트</td><td>결과물이 옆 창에 따로 떠요</td><td>여러 번 고칠 문서, 표, 작은 도구</td></tr><tr><td>설정</td><td>사용량, 기능 켜고 끄기, 기억 관리</td><td>처음에 한 번, 한도에 걸렸을 때</td></tr></tbody></table></div>
+<p>출처: Claude 공식 도움말 「What are artifacts」, 「What are projects」, 「Use incognito chats」, 「Chat search and memory」 (2026년 11월 17일 확인)</p></div><p class="meta">내용 확인: 2026년 11월 18일 · Claude 화면과 요금제는 자주 바뀌어요. 다르면 인스타 DM으로 알려 주세요.</p><div class="nav"><a href="../02/">← 2강</a><span class="r">4강 · 곧 올라와요</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
