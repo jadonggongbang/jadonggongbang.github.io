@@ -1,0 +1,117 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>7강 긴 문서 붙이기: 요약 말고 &#x27;확인할 것&#x27;부터 | Claude 교실 · 자동공방</title><meta name="description" content="공지 PDF나 과제 공고처럼 긴 문서를 받았을 때 요약보다 먼저 뽑을 것을 알려 드려요. 숫자를 원문 그대로 받는 법, 문서에 답이 없는 질문 찾기까지 실제로 돌린 결과와 함께 담았어요.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/07/">
+<meta property="og:type" content="article"><meta property="og:title" content="7강 긴 문서 붙이기: 요약 말고 &#x27;확인할 것&#x27;부터 | Claude 교실 · 자동공방"><meta property="og:description" content="공지 PDF나 과제 공고처럼 긴 문서를 받았을 때 요약보다 먼저 뽑을 것을 알려 드려요. 숫자를 원문 그대로 받는 법, 문서에 답이 없는 질문 찾기까지 실제로 돌린 결과와 함께 담았어요."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 7강 · 1부 · Claude 시작하기</div><h1>긴 문서 붙이기: 요약 말고 &#x27;확인할 것&#x27;부터</h1><p>공지 PDF나 과제 공고처럼 긴 문서를 받았을 때 요약보다 먼저 뽑을 것을 알려 드려요. 숫자를 원문 그대로 받는 법, 문서에 답이 없는 질문 찾기까지 실제로 돌린 결과와 함께 담았어요.</p></div></header><article><div class="wrap"><p>회사 공지 PDF가 오면 저는 일단 저장부터 해요. 읽는 건 나중에요. 그런데 그 나중은 잘 안 오더라고요. 그러다 마감일을 남한테 듣죠.<br>학교도 같아요. 장학금 공고, 졸업 요건 안내, 인턴 모집 요강은 길고, 나한테 필요한 건 한두 줄인데 그게 어디 있는지 몰라요.</p>
+<p>이럴 때 다들 "요약해 줘"부터 해요. 나쁘진 않아요. 그런데 요약은 <b>문서 기준</b>으로 줄인 거라서, 내가 챙길 마감이 요약에서 빠지기도 해요. 그래서 오늘은 요약보다 먼저 <b>'확인할 것'</b>을 뽑는 법을 적었어요. 마감을 남한테 듣는 일이 줄어요.</p>
+<h2>1. 문서 붙이는 법</h2>
+<ul><li><b>글이면:</b> 입력창에 그대로 붙여요.</li><li><b>파일이면:</b> 입력창 옆 <b>+ 버튼</b>으로 PDF, 워드, 엑셀, 스크린숏을 붙여요. (3강에서 본 그 버튼이에요)</li><li><b>순서:</b> 짧은 문서면 부탁 문장을 먼저 쓰고 그 아래에 붙여요. 4강에서 한 방식이죠.</li></ul>
+<p>수십 쪽짜리 문서는 조금 달라요. Anthropic 공식 가이드는 긴 자료를 <b>위에</b> 두고, 질문은 <b>맨 끝에</b> 두는 게 낫다고 해요. 파일을 먼저 붙이고 질문을 마지막에 쓰면 돼요. 헷갈리면 이것만 기억하세요. <b>짧으면 질문 먼저, 길면 질문은 맨 끝.</b></p>
+<h2>2. 실제로 돌린 것: 가상 공지 하나로 여섯 가지</h2>
+<p>가상 문서 「출장비 규정 개정 안내」로 돌려 봤어요. 12월 1일부터 숙박비 상한, 교통비, 일비, 정산 기한이 바뀐다는 내용이에요. (2026-11-14, 유료 모델로 실측. 문서와 이름은 지어낸 거예요)</p>
+<h3>① 3줄 요약 (먼저 비교용으로)</h3>
+<pre>아래 문서를 3줄로 요약해 줘.
+1줄은 결론, 2줄은 근거, 3줄은 내가 할 일로.</pre>
+<p>정확히 3줄로 왔어요. 결론(12/1부터 숙박·교통 오르고 정산 기한 줄어듦), 근거(바뀐 금액들), 할 일(11/20까지 질문 회신, 3일 전 승인, 7일 안 정산).<br>괜찮아 보이죠? 그런데 이건 <b>문서가 중요하다고 한 순서</b>예요. 나한테 중요한 순서와는 달라요.</p>
+<h3>② 확인할 것만, 숫자는 원문 그대로</h3>
+<pre>아래 문서에서 내가 직접 확인할 것만 뽑아 줘.
+숫자, 날짜, 마감이 나온 문장은 원문 그대로 옮겨 줘.</pre>
+<p>'지금 할 일 / 적용 시점 / 출장 전 / 결제 / 정산할 때'로 묶고, 숫자 문장을 옮겨 왔어요. 해외 출장은 "대상이 아니라 뺐다"고 밝혔고요.<br><b>조심할 것:</b> '원문 그대로'라고 했는데도 몇 줄은 풀어서 썼어요. 숫자는 원문과 한 번 대조하세요. 8강에서 더 다룰게요.</p>
+<h3>③ 나랑 상관있는 것만</h3>
+<pre>나는 [영업팀 3년 차]야. 출장이 한 달에 두세 번 있어.
+아래 문서에서 나랑 상관있는 부분만 골라 줘.
+상관없는 건 '해당 없음' 한 줄로 묶어 줘.</pre>
+<p>5강에서 본 그 결과예요. 맨 위에 '바로 챙길 것'(정산 7일, 3일 전 승인, 영수증)을 뽑아 줬어요. 내 일만 남으니 읽을 줄이 확 줄어요.</p>
+<h3>④ 개정본이면 바뀐 것만</h3>
+<pre>아래 문서에서 바뀐 것만 '전 → 후' 표로 보여 줘.
+안 바뀐 건 빼 줘.</pre>
+<p>5행 표가 나왔어요. 눈에 띈 건 따로 있어요. 당일 출장의 <b>이전 일비는 문서에 직접 안 나와서 2만 원으로 보았다</b>고 스스로 밝혔거든요. 추측한 칸을 숨기지 않은 거예요. 이런 줄이 있으면 그 칸만 확인하면 돼요.</p>
+<h3>⑤ 문서에 답이 없는 질문</h3>
+<pre>아래 문서를 읽고 담당자한테 물어볼 질문 3개만 뽑아 줘.
+문서에 답이 없는 것만.</pre>
+<p>나온 질문이에요.</p>
+<ol><li>11/30에 출발해서 12/1 이후에 끝나는 출장은 어느 규정인가요?</li><li>숙박 상한을 넘으면 초과분은 본인 부담인가요?</li><li>'7일', '3일'은 영업일인가요, 달력일인가요?</li></ol>
+<p><b>저는 이게 제일 쓸모 있었어요.</b> 셋 다 문서를 꼼꼼히 읽어도 답이 없는 질문이에요. 보통은 마감이 지나고서야 묻게 되죠. 이 문장 하나면 마감 전에 물어볼 수 있어요.</p>
+<h3>⑥ 단톡방용 5줄</h3>
+<pre>아래 문서를 팀 단톡방에 올릴 5줄로 줄여 줘.
+언제부터인지, 할 일, 마감을 맨 위에 써 줘.</pre>
+<p>첫 줄이 이렇게 왔어요: "12/1 출장분부터 | 할 일: 질문 회신 | 마감 11/20(금)". 단톡방에서는 첫 줄만 읽히니까, 첫 줄에 다 들어가 있으면 팀원이 따로 묻지 않아요.</p>
+<h2>3. 학교·생활에서는</h2>
+<h3>학교·취준</h3>
+<pre>나는 4학년이고, 이번 학기에 졸업하려고 해.
+아래 졸업 요건 안내에서 내가 직접 확인할 것만 뽑아 줘.
+학점, 날짜, 제출 서류가 나온 문장은 원문 그대로.
+그리고 안내문에 답이 없는 질문 3개도.</pre>
+<h3>생활</h3>
+<pre>아래 전세 계약서 특약 부분에서
+날짜, 금액, '~해야 한다'가 나온 문장만 원문 그대로 뽑아 줘.
+그리고 집주인한테 물어볼 질문 3개. 계약서에 답이 없는 것만.</pre>
+<p>계약서나 법률 문서는 Claude 답을 <b>판단 근거로 쓰면 안 돼요.</b> "어디를 볼지" 찾는 데까지만 쓰세요. 판단은 원문과 전문가에게 맡기고요.</p>
+<h2>4. 한 번에 다 받고 싶으면</h2>
+<pre>앞으로 내가 문서를 붙이면 아래 순서로 정리해 줘.
+1) 3줄 요약: 결론 / 근거 / 내가 할 일
+2) 직접 확인할 숫자·날짜·마감 (원문 그대로)
+3) 문서에 답이 없는 질문 3개
+문서에 없는 내용은 지어내지 마.</pre>
+<p>이 문장은 무료 모델(Sonnet)로도 돌려 봤어요. 3줄 요약, 원문 숫자, 질문 3개가 같은 모양으로 나왔어요. 다만 질문 한 줄에 두 개를 묶어 넣기도 해서, 3개가 맞는지 한 번 세어 보세요. (2026-11-15)<br>자주 쓸 거면 프로젝트 지침에 넣어 두세요. 다음부터는 문서만 붙이면 돼요. (9강에서 자세히)</p>
+<h2>5. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"원문 그대로 하랬는데 말을 바꿔요."</b><br>제가 돌렸을 때도 그랬어요. 긴 문서일수록 정리하려는 버릇이 나와요. 숫자 문장은 Ctrl+F로 원문에서 한 번 찾아보세요. 다르면 원문이 맞아요.</p>
+<p><b>"PDF를 붙였는데 표가 이상하게 읽혀요."</b><br>스캔한 PDF나 복잡한 표는 잘못 읽을 때가 있어요. 중요한 표는 그 부분만 스크린숏으로 따로 붙이거나, 표를 글로 옮겨서 붙이세요.</p>
+<p><b>"문서가 너무 길어서 한도에 금방 걸려요."</b><br>긴 문서는 무거워요. 같은 채팅에서 질문을 계속 이어 가면 더 빨리 차요. 필요한 질문을 4절처럼 한 번에 묶으면 한도를 덜 써요. (2강에서 본 아껴 쓰는 법)</p>
+<p><b>"문서에 없는 걸 지어내요."</b><br>'문서에 없는 내용은 지어내지 마'를 빼먹지 않았는지 보세요. 넣었는데도 그러면 "문서에 있는 문장만 근거로 다시"라고 한 번 더 보내요.</p>
+<p><b>"회사 문서 붙여도 돼요?"</b><br>회사 규칙이 먼저예요. 외부 AI에 못 올리는 자료면 넣지 마세요. 넣을 수 있어도 이름과 금액은 바꿔서요. (10강에서 자세히)</p>
+<h2>6. 숙제 하나</h2>
+<p>최근에 받고 저장만 해 둔 긴 문서 하나를 꺼내 보세요. 공지든 요강이든 괜찮아요. 거기에 ⑤번 "문서에 답이 없는 질문 3개"만 돌려 보세요.</p>
+<blockquote>나온 질문 중 진짜 궁금했던 것: ___개 / 3개</blockquote>
+<p>하나라도 있으면 오늘 담당자에게 물어보세요. 마감 전에 받은 답 하나가, 마감 뒤에 듣는 사정보다 훨씬 쓸모 있어요.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>하고 싶은 것</th><th>문장 핵심</th></tr></thead><tbody><tr><td>붙이는 순서</td><td>짧으면 질문 먼저, 길면 질문은 맨 끝</td></tr><tr><td>확인할 것</td><td>숫자·날짜·마감 문장은 원문 그대로 (그래도 대조는 직접 해요)</td></tr><tr><td>나랑 상관있는 것</td><td>"나는 ○○야" 한 줄 + '해당 없음' 한 줄로 묶기</td></tr><tr><td>개정본</td><td>바뀐 것만 '전 → 후' 표</td></tr><tr><td>제일 쓸모</td><td>문서에 <b>답이 없는</b> 질문 3개</td></tr><tr><td>단톡방</td><td>언제부터·할 일·마감을 첫 줄에</td></tr><tr><td>꼭 넣을 말</td><td>"문서에 없는 내용은 지어내지 마"</td></tr><tr><td>다음</td><td>8강: 숫자·출처 확인하는 습관</td></tr></tbody></table></div>
+<p>출처: Anthropic 공식 문서 「Prompting best practices」 중 긴 자료 다루기(platform.claude.com, 2026년 11월 20일 확인). 실측: 자동공방 2주차 월 카드 기록(2026-11-14 유료 모델, 보너스 문장은 11-15 무료 모델).</p></div><p class="meta">내용 확인: 2026년 11월 20일 · Claude 화면과 요금제는 자주 바뀌어요. 다르면 인스타 DM으로 알려 주세요.</p><div class="nav"><a href="../06/">← 6강</a><span class="r">8강 · 곧 올라와요</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
