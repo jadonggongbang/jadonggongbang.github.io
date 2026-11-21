@@ -1,0 +1,104 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>8강 틀릴 때: 숫자랑 출처 확인하는 습관 | Claude 교실 · 자동공방</title><meta name="description" content="Claude도 틀려요. 특히 숫자랑 출처에서요. 답을 받은 뒤 어디부터 의심할지, &#x27;모르면 모른다고&#x27; 한 줄이 왜 필요한지, 단톡방에 퍼 온 글로 실제로 돌린 결과와 함께 담았어요.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/08/">
+<meta property="og:type" content="article"><meta property="og:title" content="8강 틀릴 때: 숫자랑 출처 확인하는 습관 | Claude 교실 · 자동공방"><meta property="og:description" content="Claude도 틀려요. 특히 숫자랑 출처에서요. 답을 받은 뒤 어디부터 의심할지, &#x27;모르면 모른다고&#x27; 한 줄이 왜 필요한지, 단톡방에 퍼 온 글로 실제로 돌린 결과와 함께 담았어요."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 8강 · 1부 · Claude 시작하기</div><h1>틀릴 때: 숫자랑 출처 확인하는 습관</h1><p>Claude도 틀려요. 특히 숫자랑 출처에서요. 답을 받은 뒤 어디부터 의심할지, &#x27;모르면 모른다고&#x27; 한 줄이 왜 필요한지, 단톡방에 퍼 온 글로 실제로 돌린 결과와 함께 담았어요.</p></div></header><article><div class="wrap"><p>단톡방에 누가 글을 퍼 와요. "충격) 20대 10명 중 7명이…" 숫자가 있으니 그럴듯해 보여요. 저도 그런 글을 다른 방에 그대로 옮긴 적이 있어요. 나중에 틀린 글이었다는 걸 알았을 땐 이미 몇 사람이 믿은 뒤였어요.</p>
+<p>Claude 답도 비슷해요. 문장이 매끄럽고 숫자까지 붙어 있으면 그냥 믿게 돼요. 그런데 <b>Claude도 틀려요.</b> 특히 숫자, 날짜, "○○ 연구에 따르면" 같은 출처에서요. 오늘은 답을 받은 뒤 <b>어디부터 의심할지</b> 정리했어요. 이걸 알면 틀린 숫자를 보고서나 단톡방에 옮기기 전에 걸러낼 수 있어요.</p>
+<h2>1. 왜 틀리나요</h2>
+<p>Claude는 글을 <b>그럴듯하게 이어 쓰는 데</b> 아주 능해요. 그래서 모르는 것도 아는 것처럼 매끄럽게 쓸 때가 있어요. 이런 걸 '환각(할루시네이션)'이라고 불러요. 일부러 속이는 게 아니라, 빈칸을 그럴듯한 말로 채우는 거예요.</p>
+<p>잘 틀리는 곳은 정해져 있어요.</p>
+<ul><li><b>숫자:</b> 퍼센트, 금액, 날짜, "○배"</li><li><b>출처:</b> 연구 이름, 기관 이름, 기사, 법 조항</li><li><b>요일:</b> 날짜와 요일을 같이 쓴 곳. 올해 11월 25일은 수요일인데 "11월 25일 화요일"이라고 쓰는 식이에요. (6강에서 본 그 실수)</li><li><b>최근 일:</b> Claude가 배운 시점 뒤에 생긴 일</li></ul>
+<p>이 네 곳만 보면 돼요. 답 전체를 다 의심할 필요는 없어요. 의심할 곳을 알면 확인하는 시간이 확 줄어요.</p>
+<h2>2. Anthropic이 권하는 세 가지</h2>
+<p>Anthropic 공식 가이드 「Reduce hallucinations」는 기본으로 세 가지를 권해요.</p>
+<ol><li><b>모른다고 말해도 된다고 허락하기.</b> 이 한 줄만 넣어도 지어낸 답이 크게 줄어든다고 해요.</li><li><b>긴 문서는 원문 문장부터 뽑게 하기.</b> 정리하기 전에 원문을 그대로 옮겨 오게 해요. 7강에서 숫자는 원문 그대로 받으라고 한 게 이거예요.</li><li><b>주장마다 근거 문장 달기.</b> 근거를 못 찾은 주장은 빼게 해요.</li></ol>
+<p>가이드에도 이 방법들이 실수를 <b>줄여 줄 뿐 없애지는 못한다</b>고 적혀 있어요. 그래서 마지막 확인은 내가 해요. 아래는 그 확인을 쉽게 하는 문장들이에요.</p>
+<h2>3. 실제로 돌린 것: 단톡방에 퍼 온 글</h2>
+<p>지어낸 글 하나로 돌려 봤어요. (2026-11-20, 유료 요금제로 실제로 돌림. 글은 지어낸 거예요)</p>
+<blockquote>충격) 20대 10명 중 7명이 하루 6시간 이상 휴대폰 본다고 함. 서울대 연구팀 발표. 작년보다 2배 늘었고, 잠들기 전 1시간 휴대폰 보면 수면 질이 40% 떨어진다고. 세계보건기구도 하루 2시간 넘기지 말라고 권고했다고 함. 출처: 인터넷 뉴스</blockquote>
+<pre>아래 글을 다른 데 옮겨도 되는지 보고 싶어.
+고치지 말고, 숫자랑 출처를 먼저 확인해야 하는 곳만 짚어 줘.
+왜 의심스러운지 한 줄씩, 내가 직접 확인하려면 어디를 보면 되는지도.
+모르는 건 모른다고 말해 줘.</pre>
+<p>첫 줄이 이렇게 왔어요. "지금 상태로는 옮기지 않는 게 좋겠어. 숫자 4개와 기관 2곳이 나오는데, 원문까지 따라갈 수 있는 출처가 하나도 없어."</p>
+<p>그리고 여섯 곳을 짚었어요. 눈에 띈 것만 옮길게요.</p>
+<ul><li><b>"작년보다 2배":</b> 무엇이 2배인지 모르겠다고 했어요. 사람 수가 2배인지, 쓰는 시간이 2배인지요.</li><li><b>"수면 질 40%":</b> 수면 질은 보통 점수로 재는데 40%라는 표현이 어색하다고 했어요. 그리고 함께 일어난 일을 원인처럼 쓴 걸 수도 있다고요.</li><li><b>"세계보건기구 권고":</b> 자기가 아는 건 2019년에 나온 5세 미만 아이 권고뿐이고, 그 뒤에 새로 나온 게 있는지는 <b>자기도 모른다</b>고 했어요.</li><li>곳마다 확인할 곳도 알려 줬어요. 정부 실태조사, 대학 보도자료, 논문 검색 사이트, 세계보건기구 홈페이지, 뉴스 검색이에요.</li></ul>
+<p>마지막 줄이 제일 좋았어요. "틀렸다고 확인한 게 아니라, <b>아직 확인되지 않았다</b>는 뜻이야."</p>
+<p><b>저는 이게 제일 쓸모 있었어요.</b> "모르는 건 모른다고 말해 줘" 한 줄을 넣었더니, 아는 것과 모르는 것을 나눠서 말해 줬어요. 세계보건기구 2019년 권고는 제가 세계보건기구 홈페이지에서 다시 확인했어요. 정말 5세 미만 아이만 다룬 권고였어요. 어른에게 "하루 2시간"을 정한 권고는 저도 찾지 못했어요.</p>
+<p><b>그런데 하나 걸렸어요.</b> 첫 줄에서 "숫자 4개"라고 했는데, 제가 세어 보니 글에 나온 숫자는 6개였어요(10명 중 7명, 6시간, 2배, 1시간, 40%, 2시간). 숫자를 의심하라는 답에서도 숫자가 틀린 거예요. 짚은 내용은 쓸모 있었지만, <b>마지막 확인은 결국 내가</b> 해야 해요.</p>
+<h2>4. 내가 받은 답을 확인할 때</h2>
+<p>남의 글만 그런 게 아니에요. Claude가 쓴 답도 똑같이 확인해요. 가상 문서 「겨울 단기 해외연수 장학 안내」로 돌려 봤어요. 평점 3.0 이상이면 지원할 수 있고, 항공료 최대 80만 원과 체재비(현지에서 지내는 데 드는 돈) 월 50만 원을 줘요. 연수는 1월 4일부터 29일까지이고 "4주"라고 적혀 있어요. 연수 뒤 2주 안에 보고서를 안 내면 절반을 돌려줘야 한다는 조건도 있어요. 먼저 "나는 평점 3.2야. 최대 얼마 받고, 언제까지 뭘 해야 해?"라고 물었어요. (2026-11-20, 유료 요금제로 실제로 돌림. 문서는 지어낸 거예요)</p>
+<p>첫 답은 <b>"최대 약 130만 원"</b>이었어요. 항공료 80만 원과 체재비 50만 원을 더한 값이에요. 깔끔해 보이죠. 같은 채팅에서 아래 두 부탁을 차례로 이어서 보냈어요.</p>
+<h3>하나: 답을 받은 직후</h3>
+<pre>방금 답에서 숫자, 날짜, 출처가 나온 문장만 골라 줘.
+문장마다 '내가 확인해야 할 것'을 한 줄씩.
+네가 확실하지 않은 건 '확실하지 않음'이라고 표시해 줘.</pre>
+<p>130만 원에 스스로 <b>'확실하지 않음'</b>을 붙였어요. 안내문엔 "4주"라고만 있어서, 체재비 한 달치를 다 주는지, 날짜만큼 나눠 주는지는 안내문에 없다고요. 보고서 마감 "2/12 무렵"도 자기가 1/29에 2주를 더해 계산한 날짜라고 밝혔어요. 1월 4일부터 29일까지는 26일이라 꽉 찬 4주가 아니라는 것도 짚었어요. 제가 달력으로 세어 봤는데 맞았어요.<br><b>조심할 것:</b> 확인할 줄이 14개나 나왔어요. 다 볼 필요는 없어요. <b>'확실하지 않음'이 붙은 줄만</b> 먼저 보세요.</p>
+<h3>둘: 근거 문장 달기 (문서를 붙여서 물었을 때)</h3>
+<pre>답의 주장마다 근거가 된 문서 문장을 원문 그대로 달아 줘.
+근거 문장을 못 찾은 주장은 빼고, 뺐다고 알려 줘.</pre>
+<p>근거가 있는 주장 8개에는 안내문 문장을 그대로 붙였어요. 그리고 <b>뺀 주장 6개</b>를 따로 모았어요. "최대 약 130만 원"이 맨 위에 있었어요. 근거 문장이 없고, 체재비를 한 달치로 다 준다고 가정한 계산이라서요.</p>
+<p><b>여기서 제일 놀랐어요.</b> 처음 답에서 제일 그럴듯했던 숫자가 근거 없는 칸으로 옮겨 갔어요. 이 문장이 없었다면 저는 130만 원을 믿고 예산을 짰을 거예요. 이제 국제처에 물어볼 질문이 하나 생겼어요. "4주 연수도 체재비 한 달치를 다 주나요?"</p>
+<p>7강에서 보신 것처럼 '원문 그대로'라고 해도 말을 바꿀 때가 있어요. 근거 문장은 원문에서 찾기 기능(윈도우 Ctrl+F, 맥 Cmd+F, 폰은 '페이지에서 찾기')으로 한 번 찾아보세요. 찾아지면 통과예요.</p>
+<h2>5. 학교·회사·생활에서는</h2>
+<ul><li><b>과제·보고서:</b> Claude가 알려 준 통계나 논문은 <b>그대로 인용하지 마세요.</b> 원문을 찾아서 원문을 인용해요. 원문이 안 찾아지면 쓰지 않아요.</li><li><b>회사:</b> 매출, 날짜, 금액이 들어간 문장은 원래 자료와 한 번 대조해요. 숫자 하나 틀린 보고서는 나머지 내용까지 의심받아요.</li><li><b>생활:</b> 법, 돈, 건강 이야기는 Claude 답을 <b>어디를 찾아볼지 아는 데까지만</b> 써요. 판단은 공식 기관과 전문가에게 맡기고요.</li></ul>
+<h2>6. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"출처를 달라니까 링크를 줬는데 안 열려요."</b><br>있는 것처럼 보이는 주소를 지어낼 때가 있어요. 링크는 꼭 눌러 보세요. 안 열리면 일단 믿지 않아요. 열려도 끝이 아니에요. 그 페이지에 정말 그 내용이 있는지 찾아봐요.</p>
+<p><b>"모른다고 하라고 했는데도 지어내요."</b><br>한 번 더 보내요. "방금 답에서 네가 확실하게 아는 것과 추측한 것을 나눠 줘." 나눠 보면 추측한 칸이 보여요.</p>
+<p><b>"요일이 자꾸 틀려요."</b><br>날짜와 요일이 같이 나오면 달력으로 한 번 확인해요. 계산이 중요한 날짜면 "요일은 달력 기준으로 다시 확인해 줘"를 한 줄 붙여요.</p>
+<p><b>"최근 일을 물었더니 옛날 이야기를 해요."</b><br>Claude가 배운 시점 뒤의 일은 모를 수 있어요. 웹 검색을 켜면 최근 자료를 찾아오기도 하는데, 그때도 출처 링크를 눌러 봐요. 최신 소식은 뉴스나 공식 페이지에서 직접 확인하는 게 제일 확실해요.</p>
+<h2>7. 숙제 하나</h2>
+<p>최근에 단톡방이나 SNS에서 본 숫자 하나를 골라 보세요. "○명 중 ○명", "○% 늘었다" 같은 거요. 3번에 나온 부탁 문장에 넣어 돌려 보세요.</p>
+<blockquote>Claude가 짚은 곳: ___곳 / 그중 내가 진짜 확인해 본 곳: ___곳</blockquote>
+<p>한 곳이라도 직접 확인해 봤다면 오늘 숙제는 끝이에요. 그다음부터는 숫자를 볼 때마다 "출처가 어디지?"부터 떠올리게 될 거예요.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>하고 싶은 것</th><th>문장 핵심</th></tr></thead><tbody><tr><td>잘 틀리는 곳</td><td>숫자 · 출처 · 요일 · 최근 일</td></tr><tr><td>꼭 넣을 말</td><td>"모르는 건 모른다고 말해 줘"</td></tr><tr><td>남의 글 확인</td><td>고치지 말고 숫자·출처 확인할 곳만 + 어디 보면 되는지</td></tr><tr><td>내 답 확인</td><td>숫자·날짜·출처 문장만 골라 '확실하지 않음' 표시</td></tr><tr><td>문서 기반 답</td><td>주장마다 원문 근거 문장, 못 찾으면 빼기</td></tr><tr><td>링크</td><td>눌러 보기. 열려도 그 내용이 있는지 찾아보기</td></tr><tr><td>다음</td><td>9강: 프로젝트와 지침: 매번 같은 설명은 그만</td></tr></tbody></table></div>
+<p>출처: Anthropic 공식 문서 「Reduce hallucinations」(platform.claude.com, 2026년 11월 20일 확인). WHO 「5세 미만 아동의 신체활동·좌식 행동·수면 지침」(2019). 직접 돌려 본 날: 2026-11-20 (유료 요금제, 지어낸 글·지어낸 장학 안내).</p></div><p class="meta">내용 확인: 2026년 11월 20일 · Claude 화면과 요금제는 자주 바뀌어요. 다르면 인스타 DM으로 알려 주세요.</p><div class="nav"><a href="../07/">← 7강</a><span class="r">9강 · 곧 올라와요</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
