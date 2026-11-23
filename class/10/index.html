@@ -1,0 +1,115 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>10강 기억·시크릿 채팅·넣으면 안 되는 자료: 뭐가 남고 뭐가 안 남나요? | Claude 교실 · 자동공방</title><meta name="description" content="Claude는 내 말을 어디까지 기억할까요? 기억 기능을 보고 지우는 곳, 기록이 남지 않는 시크릿 채팅, 대화가 학습에 쓰이는지 정하는 설정, 그리고 붙여 넣기 전에 걸러야 할 정보를 실제로 돌려 본 결과와 함께 담았어요.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/10/">
+<meta property="og:type" content="article"><meta property="og:title" content="10강 기억·시크릿 채팅·넣으면 안 되는 자료: 뭐가 남고 뭐가 안 남나요? | Claude 교실 · 자동공방"><meta property="og:description" content="Claude는 내 말을 어디까지 기억할까요? 기억 기능을 보고 지우는 곳, 기록이 남지 않는 시크릿 채팅, 대화가 학습에 쓰이는지 정하는 설정, 그리고 붙여 넣기 전에 걸러야 할 정보를 실제로 돌려 본 결과와 함께 담았어요."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 10강 · 2부 · 내 일에 맞추기</div><h1>기억·시크릿 채팅·넣으면 안 되는 자료: 뭐가 남고 뭐가 안 남나요?</h1><p>Claude는 내 말을 어디까지 기억할까요? 기억 기능을 보고 지우는 곳, 기록이 남지 않는 시크릿 채팅, 대화가 학습에 쓰이는지 정하는 설정, 그리고 붙여 넣기 전에 걸러야 할 정보를 실제로 돌려 본 결과와 함께 담았어요.</p></div></header><article><div class="wrap"><p>누구에게나 두 개의 서랍이 있어요. 남들이 봐도 되는 서랍, 그리고 나만 여는 서랍이요. 사람을 만날 때는 어느 서랍을 열지 저절로 가려요. 그런데 Claude 앞에서는 그 가름이 쉽게 흐려져요. 편하니까 이것저것 다 붙여 넣게 돼요.</p>
+<p>오늘은 <b>무엇이 남고, 무엇이 안 남는지</b> 정리했어요. 기억 기능, 시크릿 채팅, 학습 설정, 그리고 처음부터 넣으면 안 되는 자료까지요. 이걸 알면 "이거 넣어도 되나?" 망설이는 시간이 줄고, 넣고 나서 찜찜해하는 일도 줄어요.</p>
+<h2>1. Claude에는 '남는 곳'이 세 군데 있어요</h2>
+<div class="tbl"><table><thead><tr><th>어디에</th><th>무엇이</th><th>내가 정할 수 있나</th></tr></thead><tbody><tr><td><b>채팅 기록</b></td><td>왼쪽 목록에 보이는 대화</td><td>지우면 목록에서 바로 사라져요</td></tr><tr><td><b>기억</b></td><td>대화하면서 Claude가 따로 적어 두는 나에 대한 내용</td><td>보고, 고치고, 지울 수 있어요</td></tr><tr><td><b>학습</b></td><td>Anthropic이 다음 Claude를 만들 때 쓰는 자료</td><td>설정으로 켜고 끌 수 있어요</td></tr></tbody></table></div>
+<p>세 군데는 따로 움직여요. <b>채팅을 지워도 기억은 남아 있을 수 있어요.</b> 도움말에도 채팅을 지운다고 그 채팅에서 생긴 기억이 지워지지 않는다고 적혀 있어요. 기억은 따로 지워야 해요. 이 한 가지만 알아도 "지웠는데 왜 알지?" 하고 놀랄 일이 없어요.</p>
+<h2>2. 기억: Claude가 나에 대해 적어 두는 메모</h2>
+<p>9강에서 새 채팅은 대개 처음부터 시작한다고 했어요. <b>기억 기능</b>은 그 빈자리를 조금 채워 줘요. 대화하는 동안 내 역할, 하는 일, 좋아하는 말투 같은 걸 주제별로 적어 두고 다음 채팅에서 참고해요.</p>
+<p><b>무료 요금제도 기억 기능이 있고, 처음부터 켜져 있어요.</b> (2026년 11월 23일 도움말 기준. 회사·단체 요금제는 관리자가 정해요)</p>
+<h3>보고, 고치고, 지우는 곳</h3>
+<ol><li>왼쪽 아래 내 이름 → <b>Settings(설정)</b> → <b>Your Claude</b>로 가요. (예전 화면에서는 Settings → Memory예요)</li><li><b>Your memory</b> 옆 <b>Manage</b>를 눌러요.</li><li><b>Topics</b> 아래에 주제별로 적힌 기억이 나와요. 눌러서 읽고, 연필 모양으로 고치고, <b>Delete</b>로 지워요.</li></ol>
+<p>채팅 안에서 말로 해도 돼요. "이거 기억해 줘", "○○는 잊어 줘"처럼요.</p>
+<p><b>한 번은 꼭 열어 보세요.</b> 제가 생각한 것보다 많이 적혀 있으면, 그게 내가 그동안 얼마나 많이 털어놨는지 보여 주는 거예요.</p>
+<h3>끄는 법</h3>
+<p>같은 화면의 <b>Generate memory from chats</b>를 끄면 두 가지 중에서 고르라고 해요.</p>
+<ul><li><b>Pause memory:</b> 지금까지 적힌 건 두고, 더 적지도 쓰지도 않아요.</li><li><b>Reset memory:</b> 적힌 기억을 전부 지워요. 프로젝트 기억까지요. 되돌릴 수 없어요.</li></ul>
+<h3>알아 두면 좋은 것</h3>
+<ul><li><b>건강, 종교, 정치 같은 민감한 이야기는 기본으로 기억하지 않아요.</b> 따로 켜야만 적어요.</li><li><b>주민등록번호 같은 신분증 번호나 금융 계좌번호는 부탁해도 기억에 적지 않는다</b>고 도움말에 적혀 있어요. 다만 이건 '기억'에 안 적는다는 뜻이에요. 채팅 기록에는 그대로 남아요. 그러니 처음부터 안 넣는 게 맞아요(5절).</li><li><b>프로젝트마다 기억이 따로 있어요.</b> 프로젝트 안에서는 그 프로젝트 기억과 프로젝트 밖 채팅의 기억을 같이 써요. 다른 프로젝트 기억은 안 써요. 완전히 떼어 놓고 싶으면 프로젝트 화면에서 <b>Use account memory</b>를 꺼요.</li><li><b>채팅 하나만 기억 없이 하고 싶다면</b> 새 채팅에서 <b>+</b> 를 눌러 <b>Memory</b>를 끄고 첫 말을 보내요. 이 채팅은 기록에는 남아요.</li><li><b>지난 채팅을 찾아서 참고하는 기능</b>(Search and reference chats)은 유료 요금제에만 있어요.</li></ul>
+<h2>3. 시크릿 채팅: 기록도 기억도 안 남는 방</h2>
+<p>잠깐 물어보고 흔적을 안 남기고 싶을 때가 있어요. 그럴 땐 <b>시크릿 채팅(Incognito chat)</b>을 써요.</p>
+<h3>여는 법</h3>
+<ol><li>프로젝트 밖에서 새 채팅을 열어요.</li><li>오른쪽 위 <b>유령 모양 아이콘</b>을 눌러요.</li><li>화면 테두리가 검게 바뀌고 왼쪽 위에 <b>Incognito chat</b>이 보이면 된 거예요.</li></ol>
+<p><b>무료 요금제도 쓸 수 있어요.</b> 프로젝트 안에서는 열 수 없어요.</p>
+<h3>무엇이 안 남나요</h3>
+<ul><li>채팅 목록에 안 남아요. 닫으면 다시 열 수 없어요.</li><li>기억에 안 적혀요. 지금까지의 기억도 꺼내 쓰지 않아요.</li><li><b>학습 설정을 켜 둬도 시크릿 채팅은 학습에 쓰지 않는다</b>고 적혀 있어요.</li></ul>
+<h3>그래도 남는 것</h3>
+<p><b>안전 확인을 위해 30일 동안은 보관해요.</b> 시크릿 채팅은 '내 화면에 안 남는 방'이지, '어디에도 없는 방'은 아니에요. 그래서 5절의 '넣으면 안 되는 자료'는 시크릿 채팅에서도 넣지 않아요.</p>
+<p>저도 이 교실 글을 쓰면서 화면을 녹화할 때 시크릿 채팅을 써요(9강). 녹화하다 엉뚱한 기억이 튀어나오지 않고, 연습한 대화가 기록에 쌓이지 않아서요.</p>
+<h2>4. 학습: 내 대화가 다음 Claude에 쓰이나요</h2>
+<p>개인 요금제에서는 <b>Settings → Privacy(개인정보)</b>의 <b>Model Improvement</b> 설정으로 정해요. 내 대화를 Claude를 더 낫게 만드는 데 써도 되는지 고르는 스위치예요.</p>
+<ul><li><b>켜 두면:</b> 새 대화나 다시 이어 간 대화가 학습에 쓰일 수 있어요. 이때는 누군지 알 수 없게 바꾼 형태로 <b>최대 5년</b> 보관할 수 있다고 적혀 있어요.</li><li><b>꺼 두면:</b> 지난 대화도 새 대화도 앞으로의 학습에 쓰지 않는다고 적혀 있어요.</li><li><b>채팅을 지우면:</b> 목록에서 바로 사라지고, 서버에서는 <b>30일 안에</b> 지워져요. 지운 채팅은 앞으로의 학습에 쓰지 않아요. 다만 이미 학습이 끝난 것까지 되돌리지는 못해요.</li><li><b>예외:</b> 켜고 꺼도, 안전 문제로 걸린 대화는 검토에 쓰일 수 있어요.</li></ul>
+<p><b>지금 한 번 열어서 어느 쪽인지 확인해 보세요.</b> 어느 쪽이 맞다고 정해진 건 없어요. 다만 내가 고른 줄 알고 쓰는 것과 모르고 쓰는 건 달라요. 회사·단체 요금제는 회사 계약을 따라요. 회사 계정이면 관리자에게 물어보는 게 정확해요.</p>
+<h2>5. 처음부터 넣으면 안 되는 것</h2>
+<p>설정을 아무리 잘 해 둬도, 넣은 순간 내 손을 떠나요. 그래서 마지막 확인은 <b>붙여 넣기 전</b>에 해요.</p>
+<p><b>이런 건 넣지 않아요</b></p>
+<ul><li>주민등록번호, 여권 번호, 계좌·카드 번호, 비밀번호</li><li>다른 사람의 전화번호, 주소, 실명이 붙은 사정 (그 사람은 동의한 적이 없어요)</li><li>회사가 "밖에 내지 말라"고 한 것: 계약서, 고객 명단, 내부 보고서</li><li>누가 "이건 우리끼리 얘기"라고 한 말</li></ul>
+<h3>실제로 돌린 것: 미팅 메모 걸러 내기</h3>
+<p>지어낸 미팅 메모 하나로 돌려 봤어요. (2026-11-23, 유료 요금제로 실제로 돌림. Claude Code에서 했어요. 사람·회사·번호는 모두 지어낸 거예요)</p>
+<pre>아래 글을 AI한테 붙여 넣기 전에 걸러야 할 정보를 찾아 줘.
+1) 넣으면 안 되는 정보를 줄마다 표시하고, 왜 안 되는지 한 줄씩.
+2) 그걸 [이름], [전화] 같은 자리표로 바꾼 '붙여 넣어도 되는 판'을 따로 만들어 줘.
+3) 자리표로 바꾸면 답의 질이 떨어지는 곳이 있으면 알려 줘.
+
+[여기에 메모를 붙여 넣기]</pre>
+<p>메모에는 고객사 이름, 담당자 이름과 휴대폰 번호, 계약 금액, "외부 공유 금지"라고 들은 내부 사정, 법인카드 끝자리를 섞어 넣었어요.</p>
+<p>Claude는 8곳을 짚었어요. 그중 두 가지가 좋았어요.</p>
+<ul><li><b>"외부 공유 금지"라고 들은 줄은 자리표로 바꾸지 말고 아예 빼라</b>고 했어요. AI에 붙여 넣는 것도 밖으로 내보내는 거라서요. 저라면 이름만 가리고 넣었을 거예요.</li><li>날짜와 시간은 <b>회사 이름이 빠지면 누구 일인지 알 수 없어서 둬도 된다</b>고 했어요. 다 가리면 답이 쓸모없어지는데, 남겨도 되는 걸 골라 줬어요.</li></ul>
+<p>3번 질문의 답도 쓸모 있었어요. 금액을 [계약금액]으로 가리면 규모를 모르니 <b>"수천만 원대"처럼 범위로</b> 적으라고 했어요. 회사 이름 대신 <b>"제조업 중견 기업"처럼 업종과 규모만</b> 적으라고 했고요. 가리면서도 답의 질은 지키는 방법이에요.</p>
+<p><b>조심할 것:</b> 이 문장도 결국 원래 메모를 Claude에 넣어야 돌아가요. 그래서 <b>진짜 민감한 메모는 내가 먼저 손으로 가리고</b>, 이 문장은 "내가 놓친 게 있나" 확인용으로 써요. 회사 규칙이 AI 사용 자체를 막는다면 이 방법도 쓰지 않아요.</p>
+<h2>6. 학교·회사·생활에서는</h2>
+<ul><li><b>과제·자소서:</b> 내 이야기는 괜찮아요. 친구나 교수님 실명이 들어간 사연은 "친구 A"로 바꿔 넣어요.</li><li><b>회사:</b> 회사 AI 사용 규칙부터 찾아봐요. 규칙이 없으면 고객 이름·금액·내부 사정은 자리표로 바꿔요. 숫자는 범위로 적어요.</li><li><b>생활:</b> 병원 서류, 계약서 사진을 올릴 땐 이름·번호 부분을 먼저 가리고 올려요. 폰 사진 편집의 '그리기'로 칠하면 돼요.</li></ul>
+<h2>7. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"채팅을 지웠는데 Claude가 아직 그걸 알아요."</b><br>채팅 기록과 기억은 따로예요. Settings → Your Claude → <b>Manage</b>에서 그 내용이 적힌 기억을 찾아 지워요.</p>
+<p><b>"시크릿 채팅 버튼이 안 보여요."</b><br>프로젝트 안에서는 안 보여요. 프로젝트 밖으로 나와서 새 채팅을 열어요.</p>
+<p><b>"기억 때문에 엉뚱한 답이 나와요."</b><br>예전 일로 적힌 기억이 지금과 안 맞을 때가 있어요. Manage에서 그 주제를 고치거나, 그 채팅만 <b>+ → Memory 끄기</b>로 해 봐요.</p>
+<p><b>"회사 자료를 프로젝트 자료 칸에 올려도 돼요?"</b><br>9강에서 미뤄 둔 질문이에요. 답은 같아요. <b>회사 규칙이 먼저예요.</b> 자료 칸에 올린 파일은 그 프로젝트의 모든 채팅에 쓰여요. 한 번 올리면 계속 쓰이는 만큼, 올리기 전에 한 번 더 생각해요.</p>
+<p><b>"메뉴 이름이 글이랑 달라요."</b><br>화면이 자주 바뀌어요. 버튼 이름은 2026년 11월 23일 영어 도움말 기준이에요. 언어 설정에 따라 한국어로 보일 수도 있어요.</p>
+<h2>8. 숙제 하나</h2>
+<p>Settings → Your Claude → <b>Manage</b>를 열어 보세요. Claude가 나에 대해 적어 둔 주제가 몇 개인지 세고, 지금 나와 안 맞는 것 하나를 고치거나 지워 보세요.</p>
+<blockquote>기억된 주제: ___개 / 고치거나 지운 것: ___개 / Model Improvement: 켜짐 · 꺼짐</blockquote>
+<p>세 칸을 다 채웠다면, 이제 Claude 앞에서도 어느 서랍을 열지 내가 고르고 있는 거예요.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>하고 싶은 것</th><th>어디서</th></tr></thead><tbody><tr><td>기억 보기·지우기</td><td>Settings → Your Claude → Manage</td></tr><tr><td>기억 끄기</td><td>Generate memory from chats → Pause(두기) · Reset(다 지우기)</td></tr><tr><td>흔적 안 남기기</td><td>새 채팅 오른쪽 위 유령 아이콘 (30일은 보관)</td></tr><tr><td>학습에 쓸지</td><td>Settings → Privacy → Model Improvement</td></tr><tr><td>채팅 지웠는데 기억이 남음</td><td>기억은 따로 지우기</td></tr><tr><td>붙여 넣기 전</td><td>번호·남의 실명·회사 비밀은 빼고, 숫자는 범위로</td></tr><tr><td>다음</td><td>11강: 채팅이 길어졌을 때 새 채팅으로 옮기기</td></tr></tbody></table></div>
+<p>출처: Claude 도움말 「Use Claude's chat search and memory to build on previous context」「Use incognito chats」(support.claude.com), 개인정보 안내 「Is my data used for model training?」「How long do you store my data?」(privacy.claude.com), 모두 2026년 11월 23일 확인. 직접 돌려 본 날: 2026-11-23(Claude Code, 지어낸 미팅 메모 걸러 내기). 사람·회사·번호는 모두 지어낸 거예요.</p></div><p class="meta">내용 확인: 2026년 11월 23일 · Claude 화면과 요금제는 자주 바뀌어요. 다르면 인스타 DM으로 알려 주세요.</p><div class="nav"><a href="../09/">← 9강</a><span class="r">11강 · 곧 올라와요</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
