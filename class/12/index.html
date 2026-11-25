@@ -1,0 +1,117 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>12강 뭘 맡길지 고르기: 3점표와 맡기면 안 되는 일 | Claude 교실 · 자동공방</title><meta name="description" content="할 일 목록을 놓고 &quot;이건 Claude에게 맡겨도 되나?&quot;를 1분 안에 가르는 3점표를 만들었어요. 세 질문으로 점수를 매기는 문장, 회사원 한 주 할 일 8개로 돌려 본 결과, 점수와 상관없이 내가 해야 하는 일까지 담았어요.">
+<link rel="canonical" href="https://jadonggongbang.github.io/class/12/">
+<meta property="og:type" content="article"><meta property="og:title" content="12강 뭘 맡길지 고르기: 3점표와 맡기면 안 되는 일 | Claude 교실 · 자동공방"><meta property="og:description" content="할 일 목록을 놓고 &quot;이건 Claude에게 맡겨도 되나?&quot;를 1분 안에 가르는 3점표를 만들었어요. 세 질문으로 점수를 매기는 문장, 회사원 한 주 할 일 8개로 돌려 본 결과, 점수와 상관없이 내가 해야 하는 일까지 담았어요."><meta property="og:image" content="https://jadonggongbang.github.io/img/c1.png"><meta property="og:locale" content="ko_KR">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap">
+<style>:root{--ink:#141414;--cream:#F5F1EA;--paper:#FBF8F3;--pink:#FF4FA0;--muted:#6B645C;--line:#E4DDD2;color-scheme:light}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Sans KR',"Apple SD Gothic Neo","Malgun Gothic",sans-serif;font-size:17px;line-height:1.85;word-break:keep-all;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:inherit}
+.bar{background:var(--ink);color:var(--cream)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;padding-block:14px;font-size:14px;font-weight:700}
+.bar a{text-decoration:none}.bar .k{color:var(--pink)}
+.hero{background:var(--ink);color:var(--cream)}
+.hero .wrap{padding-block:34px 44px;display:grid;gap:14px}
+.eyebrow{font-weight:700;font-size:13px;letter-spacing:.08em;color:#bdb6ab}
+.hero h1{font-weight:900;font-size:clamp(28px,6.6vw,44px);line-height:1.28;letter-spacing:-.03em;text-wrap:balance}
+.hero p{opacity:.85;font-size:16px}
+article .wrap{padding-block:30px 60px}
+article h2{font-weight:900;font-size:clamp(22px,4.8vw,28px);line-height:1.4;letter-spacing:-.02em;margin:48px 0 14px;padding-top:24px;border-top:1px solid var(--line)}
+article h3{font-weight:900;font-size:19px;margin:30px 0 8px}
+article p{margin:12px 0}
+article ul,article ol{margin:10px 0 14px 1.3em;display:grid;gap:6px}
+article b{font-weight:900;background:linear-gradient(transparent 62%,rgba(255,79,160,.28) 62%)}
+pre{position:relative;background:var(--ink);color:var(--cream);border-radius:14px;padding:18px 18px 18px;margin:14px 0;font-size:15px;line-height:1.7;white-space:pre-wrap;word-break:keep-all;font-family:inherit}
+pre button{position:absolute;top:10px;right:10px;border:0;border-radius:999px;background:var(--pink);color:var(--ink);font-weight:900;font-size:13px;padding:6px 12px;cursor:pointer}
+blockquote{border-left:4px solid var(--pink);background:var(--paper);border-radius:10px;padding:12px 16px;margin:14px 0;font-size:15.5px;color:#3b3631}
+.tbl{overflow-x:auto;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:15.5px;background:var(--paper);border-radius:12px;overflow:hidden}
+th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:#ece6dc;font-weight:900}
+.sum{background:var(--ink);color:var(--cream);border-radius:18px;padding:6px 20px 16px;margin-top:40px}
+.sum h2{border:0;margin-top:14px;color:var(--cream)}
+.sum table{background:transparent}.sum th{background:#262626}.sum td,.sum th{border-color:#333}
+.sum b{background:none;color:var(--pink)}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:40px;font-weight:700;font-size:15px}
+.nav a,.nav span{flex:1;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-decoration:none}
+.nav span{opacity:.5}.nav .r{text-align:right}
+.meta{font-size:13px;color:var(--muted);margin-top:24px}
+.part{margin-top:34px}
+.part h2{font-weight:900;font-size:20px;margin-bottom:10px}
+.list{list-style:none;display:grid;gap:8px}
+.list li>a,.list li>span{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;text-decoration:none;font-weight:700}
+.list li>span{opacity:.55;font-weight:500}
+.list .n{font-weight:900;color:var(--muted)}.list a .n{color:var(--pink)}
+.list .s{font-size:12px;font-weight:700;color:var(--muted)}
+footer{background:var(--ink);color:#bdb6ab;font-size:13px}footer .wrap{padding-block:22px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+</style></head><body>
+<div class="bar"><div class="wrap"><a href="../../">자동공방</a><a href="../../class/"><span class="k">●</span> Claude 교실</a></div></div>
+<header class="hero"><div class="wrap"><div class="eyebrow">CLAUDE 교실 · 12강 · 2부 · 내 일에 맞추기</div><h1>뭘 맡길지 고르기: 3점표와 맡기면 안 되는 일</h1><p>할 일 목록을 놓고 &quot;이건 Claude에게 맡겨도 되나?&quot;를 1분 안에 가르는 3점표를 만들었어요. 세 질문으로 점수를 매기는 문장, 회사원 한 주 할 일 8개로 돌려 본 결과, 점수와 상관없이 내가 해야 하는 일까지 담았어요.</p></div></header><article><div class="wrap"><p>빨래 개기는 남에게 맡겨도 돼요. 좀 삐뚤게 개져 있으면 보고 바로 알고, 다시 개면 그만이에요. 그런데 이사 갈 집 계약서 도장은 아무리 바빠도 남에게 안 맡겨요. 잘못 찍힌 걸 나중에 알면 되돌리기 어렵거든요.</p>
+<p>Claude에게 일을 맡길 때도 같은 저울을 써요. 오늘은 할 일 목록을 놓고 <b>"이건 맡길까, 내가 할까"를 1분 안에 가르는 3점표</b>를 만들어요. 이걸 알면 맡겨도 될 일은 마음 놓고 넘기고, 맡기면 안 될 일에서 사고 날 일이 줄어요.</p>
+<h2>1. 3점표: 세 질문, 한 질문에 1점</h2>
+<p>할 일 하나마다 세 가지를 물어요. "네"면 1점, "아니요"면 0점이에요.</p>
+<div class="tbl"><table><thead><tr><th>질문</th><th>1점이 되는 경우</th><th>왜 묻나요</th></tr></thead><tbody><tr><td>① <b>자주 해요?</b></td><td>한 달에 두 번 넘게 해요</td><td>자주 하는 일일수록 맡겼을 때 아끼는 시간이 커요</td></tr><tr><td>② <b>틀리면 내가 바로 알아챌 수 있어요?</b></td><td>결과를 보면 맞는지 내가 알 수 있어요</td><td>Claude도 틀려요. 내가 못 알아채는 틀림이 제일 위험해요</td></tr><tr><td>③ <b>틀려도 되돌릴 수 있어요?</b></td><td>보내거나 돈 내기 전에 고칠 수 있어요</td><td>되돌릴 수 있으면 틀려도 고치면 끝이에요</td></tr></tbody></table></div>
+<p>합을 내면 이렇게 정해요.</p>
+<ul><li><b>3점: 맡기기.</b> 결과만 훑어보면 돼요.</li><li><b>2점: 초안만 맡기고, 마지막은 내가.</b> 고치고, 보내고, 고르는 건 내 손으로 해요.</li><li><b>0~1점: 내가 하기.</b> 다만 그 일 안에서 작은 조각은 맡길 수 있어요(4절).</li></ul>
+<p>②번이 제일 중요해요. 도움말에도 Claude가 <b>틀리거나 오해를 부르는 답을 낼 수 있고, 그럴듯한 인용도 사실이 아닐 수 있다</b>고 적혀 있어요. 그래서 <b>유일한 정답처럼 믿지 말고, 중요한 조언은 꼼꼼히 살피라</b>고 해요. (2026년 11월 25일 기준) 내가 맞는지 볼 수 있는 일부터 맡기면, Claude가 틀려도 내가 걸러 내요.</p>
+<h2>2. 따라 하기 3단계</h2>
+<h3>1단계. 이번 주 할 일을 그냥 적어요</h3>
+<p>메모장에 떠오르는 대로 적어요. 순서도 문장도 신경 쓰지 않아요. 5~10개면 충분해요.</p>
+<p><b>이렇게 보이면 성공:</b> 한 줄에 한 가지 일이에요. "보고서랑 메일"처럼 두 개가 붙어 있으면 둘로 나눠요.</p>
+<h3>2단계. 아래 문장과 함께 Claude에 붙여요</h3>
+<pre>내 이번 주 할 일 목록이야. 하나씩 Claude에게 맡길지 정하고 싶어.
+각 일마다 세 질문에 0이나 1로 점수를 매겨 줘.
+1) 자주 해? (한 달에 두 번 넘게 하면 1)
+2) 틀리면 내가 바로 알아챌 수 있어? (결과를 보면 맞는지 내가 알 수 있으면 1)
+3) 틀려도 되돌릴 수 있어? (보내거나 돈 내기 전에 고칠 수 있으면 1)
+합이 3점이면 '맡기기', 2점이면 '초안만 맡기고 내가 확인', 0~1점이면 '내가 하기'.
+표로: 할 일 | 1 | 2 | 3 | 합 | 결정 | 이유 한 줄.
+점수를 매기기 어려운 일은 추측하지 말고 나에게 물어볼 질문으로 따로 적어 줘. 3개 안으로.
+
+할 일:
+[여기에 목록 붙여 넣기]</pre>
+<p><b>이렇게 보이면 성공:</b> 표 하나와 질문 몇 개가 와요. 물음표(?)가 있는 칸이 있으면, 그건 Claude가 나를 몰라서 비워 둔 칸이에요.</p>
+<h3>3단계. 질문에 답하고, 점수는 내가 고쳐요</h3>
+<p>Claude는 내 일을 하루도 해 본 적이 없어요. 그래서 점수는 초안이에요. 질문에 답하고, 내 생각과 다른 점수가 있으면 "○○는 매주 해서 1번이 1점이야"처럼 말해서 고쳐요.</p>
+<p><b>이렇게 보이면 성공:</b> 물음표가 다 사라지고, '내가 하기'에 들어간 일을 보며 "그렇지" 하고 고개가 끄덕여져요.</p>
+<h2>3. 돌려 본 결과: 회사원 한 주 할 일 8개</h2>
+<p>지어낸 회사원의 한 주 할 일 8개로 돌려 봤어요. 표는 이렇게 왔어요. (이유는 줄였어요)</p>
+<div class="tbl"><table><thead><tr><th>할 일</th><th>합</th><th>결정</th></tr></thead><tbody><tr><td>주간 회의록 정리해서 팀 메신저에 올리기</td><td>2</td><td>초안만 맡기고 내가 확인</td></tr><tr><td>거래처에 견적 늦어진다고 사과 메일 보내기</td><td>1~2</td><td>질문에 따라</td></tr><tr><td>다음 달 회식 장소 후보 찾기</td><td>2</td><td>초안만 맡기고 내가 확인</td></tr><tr><td>신입 지원자 이력서 20장 중 면접 볼 사람 고르기</td><td>0</td><td>내가 하기</td></tr><tr><td>월말 경비 영수증 엑셀에 옮기기</td><td>1~2</td><td>질문에 따라</td></tr><tr><td>엄마 건강검진 결과지 보고 병원 갈지 정하기</td><td>0</td><td>내가 하기 (+의사 상담)</td></tr><tr><td>팀장님 발표 자료 맞춤법 보기</td><td>2~3</td><td>질문에 따라</td></tr><tr><td>적금 깨서 주식 살지 정하기</td><td>0</td><td>내가 하기</td></tr></tbody></table></div>
+<p><b>저는 회의록에서 놀랐어요.</b> 매주 하는 일이고 내가 회의에 있었으니 틀린 곳도 보여요. 당연히 3점일 줄 알았어요. 그런데 ③번이 0점이었어요. 이유는 이랬어요.</p>
+<blockquote>올리는 순간 팀원이 읽으니 올리기는 직접 하세요. 메신저 글은 나중에 수정할 수 있어도 이미 읽은 사람이 있을 수 있어서요.</blockquote>
+<p>맞는 말이에요. <b>'정리하기'와 '올리기'는 다른 일이었어요.</b> 정리는 맡기고 올리기는 내가 하면, 회의록 일의 대부분은 넘기면서 사고는 막을 수 있어요. 사과 메일도 같아요. 쓰는 건 맡기고, 보내기 버튼은 내가 눌러요.</p>
+<p><b>물음표 칸은 추측하지 않고 질문으로 왔어요.</b> 그중 하나예요.</p>
+<blockquote>엑셀에 옮긴 금액을 카드 명세서나 영수증 합계와 맞춰 볼 수 있나요? 대조할 방법이 있으면 2번이 1점이 되어 합 2점이에요.</blockquote>
+<p>영수증 옮기기는 "단순 작업이니 맡기면 되지" 싶었어요. 그런데 금액 한 자리가 틀려도 표만 봐서는 모를 수 있어요. <b>합계를 맞춰 볼 방법이 있어야</b> 맡길 수 있는 일이었어요. 맞춰 보는 한 줄(합계 비교)만 내가 챙기면 2점이 돼요.</p>
+<p><b>0점 세 개는 모두 '결정'이었어요.</b> 누구를 면접에 부를지, 병원에 갈지, 적금을 깰지. 셋 다 틀렸는지 바로 알 수 없고, 틀리면 되돌리기 어려워요. 그래도 Claude는 일 전체를 거절하지 않고 맡길 조각을 따로 알려 줬어요. 검진 결과지는 <b>낯선 용어 설명만 맡기고, 결정은 검진기관이나 의사와</b> 하라고요.</p>
+<h2>4. 점수와 상관없이 내가 하는 일</h2>
+<p>3점표를 돌리기 전에 먼저 걸러 내는 일이 있어요. 점수가 몇 점이 나와도 마지막은 내 몫이에요.</p>
+<h3>법·건강·돈·사람 뽑기 같은 '결정'</h3>
+<p>Anthropic 사용 정책에는 <b>고위험 분야</b>가 따로 있어요. 법률, 의료, 금융, 신용, 보험, 주택, 고용, 교육과 자격 시험, 공공 급여, 법적 지위 같은 분야예요. 이런 분야에서 Claude의 답을 남에게 하는 조언이나 결정에 쓸 때는 <b>자격 있는 사람이 먼저 검토하고, AI를 썼다고 알려야</b> 한다고 적혀 있어요. (2026년 11월 12일 시행본, 11월 25일 확인)</p>
+<p>내 일로 바꿔 말하면 이래요. <b>설명은 맡기고, 결정은 사람이 해요.</b> "이 검사 수치가 무슨 뜻이야?"는 물어도 돼요. "그래서 병원 가야 돼?"는 의사에게 물어요.</p>
+<h3>보내기·올리기·돈 내기</h3>
+<p>누르는 순간 되돌릴 수 없는 버튼은 내가 눌러요. 3절의 회의록처럼, 일을 "만들기"와 "내보내기"로 쪼개면 맡길 수 있는 부분이 커져요.</p>
+<h3>내 이름으로 내는 과제·보고서</h3>
+<p>사용 정책은 <b>AI 도움을 받은 결과물을 허락이나 표시 없이 제출하는 것</b>도 막고 있어요. 학교나 회사에 AI 사용 규칙이 있으면 그 규칙이 먼저예요. 초안은 도움받아도, 제출 전에 내 말로 고치고 규칙대로 밝혀요.</p>
+<h3>처음부터 넣으면 안 되는 자료</h3>
+<p>10강에서 본 것처럼, 남의 연락처·신분증 번호·계좌번호 같은 자료는 점수를 매기기 전에 이미 빠져야 해요.</p>
+<h2>5. 학교·회사·생활에서는</h2>
+<ul><li><b>학교:</b> 조별 과제 회의록 정리, 발표 대본 맞춤법은 2~3점이에요. 자료 조사는 2점으로 두고, 출처는 꼭 열어 봐요(8강). 리포트 본문을 통째로 맡기는 건 4절의 '제출' 칸이에요.</li><li><b>회사:</b> 매주 쓰는 보고서 틀, 회의록, 메일 초안이 2~3점의 단골이에요. 이 일들은 13강부터 배울 Cowork나 Skill로 묶기 좋아요.</li><li><b>생활:</b> 여행 일정, 장보기 목록, 이사 체크리스트는 2점이 많아요. 예약과 결제 버튼만 내가 누르면 돼요.</li></ul>
+<h2>6. 막히는 곳, 그리고 왜 그런지</h2>
+<p><b>"전부 2점이 나와요."</b><br>③번에서 '보내기'가 붙은 일은 대개 0점이 돼요. 일을 "만들기"와 "보내기"로 나눠 다시 적어 보세요. 만들기 쪽이 3점으로 올라가는 일이 꽤 있어요.</p>
+<p><b>"Claude가 매긴 점수가 제 생각과 달라요."</b><br>당연해요. Claude는 내가 그 일을 얼마나 자주 하는지, 결과를 볼 줄 아는지 몰라요. 3단계처럼 이유를 붙여 고쳐 달라고 하면 돼요. 점수표의 주인은 나예요.</p>
+<p><b>"0점 일은 아예 쓰지 말라는 건가요?"</b><br>아니에요. 0점은 "결정을 맡기지 말라"는 뜻이에요. 용어 설명, 비교표 만들기, 물어볼 질문 뽑기처럼 결정 앞의 조각은 맡겨도 돼요. 3절의 검진 결과지처럼요.</p>
+<p><b>"이력서를 요약시키는 건 괜찮지 않나요?"</b><br>이력서에는 남의 이름·연락처·경력이 다 들어 있어요. 회사 규칙부터 확인하고, 넣더라도 이름과 연락처는 지우고 넣어요(10강). 누구를 부를지는 사람이 정해요.</p>
+<p><b>"Claude가 웹에서 찾아 줬는데 틀렸어요."</b><br>도움말도 웹 검색 결과는 <b>Claude가 단 출처를 직접 보라</b>고 해요. 링크가 가끔 안 열린다고도 적혀 있어요. 출처를 열어 볼 수 있으면 ②번이 1점, 못 열어 보면 0점으로 매겨요.</p>
+<p><b>"무료 요금제에서도 되나요?"</b><br>3점표는 그냥 채팅이라 무료로도 돼요. 무료 계정은 사용량이 5시간마다 돌아오고, 웹 검색을 쓰면 사용량이 더 들어요. 목록이 길면 한 번에 10개 안쪽으로 나눠 물어요.</p>
+<h2>7. 숙제 하나</h2>
+<p>내일 할 일 다섯 개를 적고 2절 문장으로 점수를 받아 보세요. 그리고 3점이 나온 일 하나를 내일 실제로 맡겨 봐요.</p>
+<blockquote>3점: ___개 / 2점: ___개 / 0~1점: ___개 / 쪼개서 점수가 오른 일: ___</blockquote>
+<p>마지막 칸이 비어 있지 않다면, 오늘 '맡길 수 있는 일'을 하나 새로 찾은 거예요.</p>
+<div class="sum"><h2>오늘 거 한 장으로</h2>
+<div class="tbl"><table><thead><tr><th>하고 싶은 것</th><th>어떻게</th></tr></thead><tbody><tr><td>맡길지 가르기</td><td>① 자주 해? ② 틀리면 알아채? ③ 되돌릴 수 있어? 한 질문에 1점</td></tr><tr><td>점수 보기</td><td>3점 맡기기 / 2점 초안만 / 0~1점 내가</td></tr><tr><td>제일 중요한 질문</td><td>② 내가 맞는지 볼 수 있는 일부터 맡겨요</td></tr><tr><td>점수 올리기</td><td>"만들기"와 "보내기"로 쪼개기, 맞춰 볼 방법 하나 만들기</td></tr><tr><td>점수 상관없이 내가</td><td>법·건강·돈·사람 뽑기 결정, 보내기·결제 버튼, 내 이름으로 내는 것</td></tr><tr><td>다음</td><td>13강: Cowork가 뭔가요? 채팅이랑 뭐가 다른가요?</td></tr></tbody></table></div>
+<p>출처: Claude 도움말 「Claude is providing incorrect or misleading responses. What's going on?」「Enable and use web search」(support.claude.com), Anthropic 「Usage Policy」「Consumer Terms of Service」(anthropic.com/legal), 모두 2026년 11월 25일 확인.</p></div><p class="meta">내용 확인: 2026년 11월 25일 · Claude 화면과 요금제는 자주 바뀌어요. 다르면 인스타 DM으로 알려 주세요.</p><div class="nav"><a href="../11/">← 11강</a><span class="r">13강 · 곧 올라와요</span></div></div></article>
+<footer><div class="wrap"><span>자동공방 · 공방장이</span><a href="https://www.instagram.com/jadonggongbang/">Instagram @jadonggongbang</a></div></footer>
+<script>document.querySelectorAll('pre').forEach(p=>{const b=document.createElement('button');b.textContent='복사';b.onclick=()=>{navigator.clipboard.writeText(p.innerText.replace(/복사(됨)?$/,'').trim()).then(()=>{b.textContent='복사됨';setTimeout(()=>b.textContent='복사',1500)})};p.appendChild(b)})</script></body></html>
